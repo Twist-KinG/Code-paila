@@ -7,15 +7,18 @@ const About = () => {
     <section className="bg-white p-6">
       {/* Made with Love heading */}
       <div className="flex justify-center items-center">
-        <div className="flex justify-center items-center bg-blue-200 px-4 py-1 m-2 rounded-full">
-        <CiHeart className="text-red-600 mr-1" size={24} />
-        <span className="text-black text-lg font-semibold">Made with Love in Nepal</span>
+        <div className="flex justify-center items-center px-4 py-1 m-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100">
+          <CiHeart className="text-red-600 mr-1" size={18} />
+          <span className="text-gray-700 text-sm font-medium">Made with Love in Nepal</span>
         </div>
       </div>
 
       {/* Yellow about heading box */}
-      <div className="bg-yellow-300 mb-10 shadow text-center">
-        <h2 className="text-2xl font-bold mb-2">About Code Paila</h2>
+      <div className="mb-10 text-center">
+        <h2 className="text-3xl font-bold mb-2">About
+          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Code Paila</span>
+        </h2>
+
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae molestias
           laudantium ducimus tempora voluptate iste delectus laboriosam ipsum velit.
