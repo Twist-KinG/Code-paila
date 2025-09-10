@@ -1,4 +1,6 @@
+
 import React from "react";
+import { Link } from "react-router-dom";
 import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
 import { FaLinkedin, FaTwitter, FaGithub, FaFacebook } from "react-icons/fa";
 import Logo from "../assets/LogoWord.png";
@@ -7,21 +9,21 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    "Web Development",
-    "Mobile Apps",
-    "UI/UX Design",
-    "Cloud Solutions",
-    "Backend Development",
-    "DevOps Services",
+    { name: "Web Development", path: "/services" },
+    { name: "Mobile Apps", path: "/services" },
+    { name: "UI/UX Design", path: "/services" },
+    // { name: "Cloud Solutions", path: "/services" },
+    { name: "Backend Development", path: "/services" },
+    // { name: "DevOps Services", path: "/services" },
   ];
 
   const company = [
-    "About Us",
-    "Our Team",
-    "Careers",
-    "Blog",
-    "Case Studies",
-    "Contact",
+    { name: "About Us", path: "/about" },
+    { name: "Our Team", path: "/team" },
+    // { name: "Careers", path: "/careers" },
+    // { name: "Blog", path: "/blog" },
+    // { name: "Case Studies", path: "/case-studies" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const socialLinks = [
@@ -96,17 +98,17 @@ const Footer = () => {
               <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
             </h3>
             <ul className="space-y-4">
-              {services.map((service, index) => (
+              {services.map((item, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to={item.path}
                     className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-2 group"
                   >
                     <div className="w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <span className="group-hover:translate-x-2 transition-transform duration-300">
-                      {service}
+                      {item.name}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -121,15 +123,15 @@ const Footer = () => {
             <ul className="space-y-4">
               {company.map((item, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to={item.path}
                     className="text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-2 group"
                   >
                     <div className="w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <span className="group-hover:translate-x-2 transition-transform duration-300">
-                      {item}
+                      {item.name}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -185,7 +187,7 @@ const Footer = () => {
               All rights reserved.
             </p>
             <div className="flex space-x-8 text-sm">
-              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
+              {["Privacy Policy", "Terms of Service"].map(
                 (link, index) => (
                   <a
                     key={index}
