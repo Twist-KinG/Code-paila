@@ -3,7 +3,7 @@ import { FiSend, FiMessageCircle } from 'react-icons/fi';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-teal-50 relative overflow-hidden">
+    <section id="contact" className="py-24 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-64 h-64 bg-blue-300/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>

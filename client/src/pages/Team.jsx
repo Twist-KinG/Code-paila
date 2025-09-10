@@ -18,7 +18,7 @@ const Team = () => {
     return (
         <section
             id="team"
-            className="py-24 bg-gradient-to-br from-gray-50 to-purple-50 relative overflow-hidden"
+            className="py-24 relative overflow-hidden"
         >
             {/* Animated Background */}
             <div className="absolute inset-0">
