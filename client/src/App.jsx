@@ -8,6 +8,7 @@ import Portfolio from "./pages/Portfolio";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
+import AdminLogin from "./components/Admin/AdminLogin";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/adminlogin" element={<AdminLogin />} />
         </Routes>
       </Layout>
     </Router>

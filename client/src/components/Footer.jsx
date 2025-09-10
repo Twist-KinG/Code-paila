@@ -187,21 +187,36 @@ const Footer = () => {
               All rights reserved.
             </p>
             <div className="flex space-x-8 text-sm">
-              {["Privacy Policy", "Terms of Service"].map(
-                (link, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group"
-                  >
-                    {link}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
-                  </a>
-                )
-              )}
+              {/* Privacy Policy */}
+              <a
+                href="#"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group"
+              >
+                Privacy Policy
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+              </a>
+
+              {/* {Terms of Service} */}
+              <a
+                href="#"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group"
+              >
+                Terms of Service
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+              </a>
+
+              {/* Admin Login Link */}
+              <Link
+                to="/adminlogin"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group"
+              >
+                -
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+              </Link>
             </div>
           </div>
         </div>
+
       </div>
     </footer>
   );
