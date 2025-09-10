@@ -5,7 +5,7 @@ import { FaArrowRight, FaMapMarkerAlt, FaCode, FaServer, FaShieldAlt, FaStar } f
 const Hero = () => {
     return (
         
-        <section id="home" className="px-30 py-24 bg-white relative overflow-hidden">
+        <section id="home" className="px-30 py-24 bg-white relative overflow-hidden mt-15">
             {/* Animated Gradient Background */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-white to-purple-50 animate-gradient-slow"></div>
 
@@ -22,7 +22,7 @@ const Hero = () => {
                 </motion.div>
             </div>
 
-            <div className="flex justify-content-center align-items-center">
+            <div className="max-w-500 flex justify-content-center align-items-center">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left Content */}
                     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="space-y-8">
