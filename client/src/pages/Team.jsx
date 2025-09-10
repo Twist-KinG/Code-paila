@@ -6,7 +6,7 @@ const Team = () => {
     const teamMembers = [
         {
             name: "Vrastachari Karki",
-            role: "CEO & Developer",
+            role: "Manager",
             image: "./src/assets/img/rajesh.jpg",
             bio: "Great fan of Jonny Sins.Role Model.",
             skills: ["React 4hrs navbar", "Node.js", ".net", "C#", "Leadership","Back in Software Development"],
@@ -24,7 +24,7 @@ const Team = () => {
         },
          {
             name: "Raj Shrestha",
-            role: "Frontend Developer",
+            role: "Senior Frontend Developer",
             image: "./src/assets/img/razz.jpg",
             bio: "Transforming Nepal's tech landscape with 10+ years of architectural brilliance.",
             skills: ["React", "Node.js", ".net", "C#", "Leadership"],
@@ -33,7 +33,7 @@ const Team = () => {
         },
          {
             name: "Basant Lamichhane",
-            role: "Frontend Developer",
+            role: "Intern",
             image: "./src/assets/img/basant.jpg",
             bio: "Transforming Nepal's tech landscape with 10+ years of architectural brilliance.",
             skills: ["React", "Node.js", ".net", "C#", "Leadership"],
@@ -51,7 +51,7 @@ const Team = () => {
         },
          {
             name: "Kshitiz Bishwokarma",
-            role: "Web Developer Trainee",
+            role: "Intern",
             image: "./src/assets/img/kshitiz.jpg",
             bio: "Transforming Nepal's tech landscape with 10+ years of architectural brilliance.",
             skills: ["React", "Node.js", ".net", "C#", "Leadership"],
