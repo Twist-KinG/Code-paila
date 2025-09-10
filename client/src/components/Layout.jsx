@@ -1,14 +1,17 @@
+// Layout.jsx
 import React from "react";
 import Navbar from "./Navbar";
+import ScrollToTop from "./ScrollToTop";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
+      <ScrollToTop />
       <Navbar />
-      <main className="flex-grow px-6 py-8">{children}</main>
+      <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
 
