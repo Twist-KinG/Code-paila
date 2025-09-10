@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 
-const AdminLogin = () => {
+const AdminSignup = () => {
     const navigate = useNavigate();
     const { login } = useContext(AuthContext);
 
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -14,14 +15,13 @@ const AdminLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post("http://localhost:5000/api/admin/login", {
-                email,
-                password,
+            const { data } = await axios.post("http://localhost:5000/api/admin/signup", {
+                name, email, password
             });
             login(data);
             navigate("/admin-dashboard");
         } catch (err) {
-            setError(err.response?.data?.message || "Login failed");
+            setError(err.response?.data?.message || "Signup failed");
         }
     };
 
@@ -29,13 +29,21 @@ const AdminLogin = () => {
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 px-4">
             <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
-                    Admin Login
+                    Admin Signup
                 </h2>
                 <p className="text-center text-gray-500 mb-4">
-                    Please sign in to access the dashboard
+                    Create a new admin account
                 </p>
                 {error && <p className="text-red-500 text-center">{error}</p>}
                 <form className="space-y-6" onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Full Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        required
+                    />
                     <input
                         type="email"
                         placeholder="admin@example.com"
@@ -56,15 +64,12 @@ const AdminLogin = () => {
                         type="submit"
                         className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition"
                     >
-                        Sign In
+                        Sign Up
                     </button>
                 </form>
-                <p className="mt-4 text-center text-gray-500">
-                    Don't have an account? <Link className="text-blue-600" to="/admin-signup">Signup</Link>
-                </p>
             </div>
         </div>
     );
 };
 
-export default AdminLogin;
+export default AdminSignup;
