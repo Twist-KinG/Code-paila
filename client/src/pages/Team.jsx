@@ -7,7 +7,52 @@ const Team = () => {
         {
             name: "Vrastachari Karki",
             role: "CEO & Developer",
-            image: "./src/assets/Rajesh.jpg",
+            image: "./src/assets/img/rajesh.jpg",
+            bio: "Great fan of Jonny Sins.Role Model.",
+            skills: ["React 4hrs navbar", "Node.js", ".net", "C#", "Leadership","Back in Software Development"],
+            achievements: "-20 Projects Led",
+            color: "from-blue-500 to-cyan-500",
+        },
+         {
+            name: "Dipesh T.Tamang",
+            role: "Senior Backend Developer",
+            image: "./src/assets/img/dipesh.jpeg",
+            bio: "Transforming Nepal's tech landscape with 10+ years of architectural brilliance.",
+            skills: ["React", "Node.js", ".net", "C#", "Leadership"],
+            achievements: "20+ Projects Led",
+            color: "from-blue-500 to-cyan-500",
+        },
+         {
+            name: "Raj Shrestha",
+            role: "Frontend Developer",
+            image: "./src/assets/img/razz.jpg",
+            bio: "Transforming Nepal's tech landscape with 10+ years of architectural brilliance.",
+            skills: ["React", "Node.js", ".net", "C#", "Leadership"],
+            achievements: "20+ Projects Led",
+            color: "from-blue-500 to-cyan-500",
+        },
+         {
+            name: "Basant Lamichhane",
+            role: "Frontend Developer",
+            image: "./src/assets/img/basant.jpg",
+            bio: "Transforming Nepal's tech landscape with 10+ years of architectural brilliance.",
+            skills: ["React", "Node.js", ".net", "C#", "Leadership"],
+            achievements: "20+ Projects Led",
+            color: "from-blue-500 to-cyan-500",
+        },
+         {
+            name: "Subash Dawadi",
+            role: "Intern",
+            image: "./src/assets/img/subas.jpg",
+            bio: "Transforming Nepal's tech landscape with 10+ years of architectural brilliance.",
+            skills: ["React", "Node.js", ".net", "C#", "Leadership"],
+            achievements: "20+ Projects Led",
+            color: "from-blue-500 to-cyan-500",
+        },
+         {
+            name: "Kshitiz Bishwokarma",
+            role: "Web Developer Trainee",
+            image: "./src/assets/img/kshitiz.jpg",
             bio: "Transforming Nepal's tech landscape with 10+ years of architectural brilliance.",
             skills: ["React", "Node.js", ".net", "C#", "Leadership"],
             achievements: "20+ Projects Led",
@@ -18,14 +63,14 @@ const Team = () => {
     return (
         <section
             id="team"
-            className="py-24 bg-gradient-to-br from-gray-50 to-purple-50 relative overflow-hidden"
+            className="py-24 relative overflow-hidden"
         >
             {/* Animated Background */}
-            <div className="absolute inset-0">
+            {/* <div className="absolute inset-0">
                 <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
                 <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-300/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-300/10 rounded-full mix-blend-multiply filter blur-2xl animate-pulse animation-delay-4000"></div>
-            </div>
+            </div> */}
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-20">
