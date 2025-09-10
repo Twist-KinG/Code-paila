@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiMapPin } from "react-icons/fi";
+import { FiMapPin, FiChevronRight } from "react-icons/fi";
 
 const Hero = () => {
     return (
@@ -30,7 +30,7 @@ const Hero = () => {
                         <div className="flex flex-col sm:flex-row gap-6">
                             <button className="group bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 flex items-center justify-center space-x-3 transform hover:-translate-y-1 hover:scale-105">
                                 <span>Get Started</span>
-                                {/* <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" /> */}
+                                <FiChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                             </button>
                             <button className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold hover:border-purple-500 hover:text-purple-600 hover:bg-purple-50 transition-all duration-300 hover:shadow-lg">
                                 <span className="group-hover:animate-pulse">View Services</span>
@@ -88,8 +88,8 @@ const Hero = () => {
                         </div>
 
                         {/* Decorative Elements */}
-                        <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 animate-pulse"></div>
-                        <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full opacity-20 animate-pulse animation-delay-2000"></div>
+                        {/* <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 animate-pulse"></div> */}
+                        {/* <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full opacity-20 animate-pulse animation-delay-2000"></div> */}
                     </div>
                 </div>
             </div>
