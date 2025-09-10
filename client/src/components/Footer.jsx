@@ -183,12 +183,12 @@ const Footer = () => {
         <div className="border-t border-gray-700/50 mt-16 pt-10">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <p className="text-gray-400 text-center md:text-left">
-              © {currentYear} CodePaila. Crafted with passion in the Himalayas.
-              All rights reserved            {/* Admin Login Link */}
-              <Link
+              © {currentYear} <Link
                 to="/adminlogin"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group">.<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
-              </Link>
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group">-<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+              </Link> CodePaila. Crafted with passion in the Himalayas.
+              All rights reserved.           
+              
             </p>
             <div className="flex space-x-8 text-sm">
               {/* Privacy Policy */}
