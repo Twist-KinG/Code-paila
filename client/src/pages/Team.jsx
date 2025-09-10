@@ -1,8 +1,11 @@
 import React from "react";
 import { FaLinkedin, FaTwitter, FaGithub, FaCoffee } from "react-icons/fa";
 import { HiOutlineBadgeCheck, HiOutlineHeart } from "react-icons/hi";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Team = () => {
+
+    const navigate = useNavigate();
     const teamMembers = [
         {
             name: "Vrastachari Karki",
@@ -193,7 +196,7 @@ const Team = () => {
                 <div className="text-center mt-20">
                     <div className="inline-flex items-center space-x-4 bg-white/80 backdrop-blur-sm px-8 py-4 rounded-full shadow-lg">
                         <span className="text-gray-700 font-medium">Want to join our amazing team?</span>
-                        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <button onClick={() => navigate("/careers")} className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                             We're Hiring!
                         </button>
                     </div>
