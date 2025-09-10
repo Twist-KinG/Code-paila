@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Gallery = () => {
+const BlogPost = () => {
   return (
     <div>
-      gallery
+      asdas
     </div>
   )
 }
 
-export default Gallery
+export default BlogPost

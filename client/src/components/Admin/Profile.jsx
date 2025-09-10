@@ -1,11 +1,11 @@
 import React from 'react'
 
-const News = () => {
+const Profile = () => {
   return (
     <div>
-      news
+      asdsd
     </div>
   )
 }
 
-export default News
+export default Profile

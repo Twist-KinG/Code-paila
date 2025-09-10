@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Update = () => {
+const Setting = () => {
   return (
     <div>
-      updates
+      dsadas
     </div>
   )
 }
 
-export default Update
+export default Setting
