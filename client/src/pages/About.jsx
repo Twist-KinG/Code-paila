@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "../assets/img/about.jpg";
+import Img from "../assets/img/bg.png";
 import { CiHeart } from "react-icons/ci";
 
 const About = () => {
@@ -8,7 +8,7 @@ const About = () => {
       {/* Made with Love heading */}
       <div className="flex justify-center items-center">
         <div className="flex justify-center items-center bg-blue-200 px-4 py-1 m-2 rounded-full">
-        <CiHeart className="text-red-600 mr-2" size={24} />
+        <CiHeart className="text-red-600 mr-1" size={24} />
         <span className="text-black text-lg font-semibold">Made with Love in Nepal</span>
         </div>
       </div>
