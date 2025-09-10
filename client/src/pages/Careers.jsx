@@ -30,6 +30,13 @@ const Careers = () => {
             description:
                 "An opportunity for freshers or students to gain hands-on experience in web development.",
         },
+        {
+            title: "Documentation Writer",
+            location: "On-Site / Nepal",
+            type: "Internship",
+            description:
+                "An opportunity for freshers or students to gain hands-on experience in documentation.",
+        },
     ];
 
     return (
