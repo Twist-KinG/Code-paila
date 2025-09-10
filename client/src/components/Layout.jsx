@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
-    <div>
-      Layout
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow px-6 py-8">{children}</main>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
