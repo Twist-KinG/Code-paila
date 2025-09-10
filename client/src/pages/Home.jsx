@@ -8,10 +8,10 @@ import Team from "./Team";
 const Home = () => {
   return (
     <section>
-      <Hero /><br />
-      <About /><br />
-      <Services /><br />
-      <Portfolio /><br />
+      <Hero />
+      <About />
+      <Services />
+      <Portfolio />
       <Team />
     </section>
   );

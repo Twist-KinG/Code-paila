@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="px-6 lg:px-30 py-24 bg-white relative overflow-hidden"
+      className="px-6 lg:px-30 py-24 bg-white relative overflow-hidden mt-15"
     >
       {/* Animated Gradient Background */}
       <div

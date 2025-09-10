@@ -66,7 +66,7 @@ const Team = () => {
     return (
         <section
             id="team"
-            className="py-24 relative overflow-hidden"
+            className="px-30 py-24 bg-white relative overflow-hidden"
         >
             {/* Animated Background */}
             {/* <div className="absolute inset-0">
@@ -75,7 +75,7 @@ const Team = () => {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-300/10 rounded-full mix-blend-multiply filter blur-2xl animate-pulse animation-delay-4000"></div>
             </div> */}
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-400 mx-auto px-10 sm:px-6 lg:px-8 relative ">
                 <div className="text-center mb-20">
                     <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full mb-6 shadow-lg">
                         <HiOutlineHeart className="h-5 w-5 text-red-500" />
@@ -108,7 +108,7 @@ const Team = () => {
                                 <img
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                                    className="w-full h-120 object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
 
                                 {/* Overlay Gradient */}

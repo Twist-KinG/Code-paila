@@ -55,9 +55,9 @@ const Services = () => {
 
 
   return (
-   <section className="py-24 relative overflow-hidden">
+   <section className="px-30 py-24 bg-white relative overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-500 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full mb-6 shadow-lg">
             <FaReact className="h-5 w-5 text-purple-500" />
@@ -76,7 +76,7 @@ const Services = () => {
           {service.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border border-white/50"
+              className="group h-100 bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border border-white/50"
               style={{ animationDelay: `${service.delay}ms` }}
             >
               {/* Gradient Border Effect */}
