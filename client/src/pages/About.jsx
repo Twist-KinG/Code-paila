@@ -1,33 +1,40 @@
 import React from "react";
 import Img from "../assets/img/about.jpg";
+import { CiHeart } from "react-icons/ci";
 
 const About = () => {
   return (
-    <section className="bg-white py-6 px-16">
-
-      {/* heading section */}
-      <div className="bg-red-400">
-        made with love
-        
+    <section className="bg-white p-6">
+      {/* Made with Love heading */}
+      <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center bg-blue-200 px-4 py-1 m-2 rounded-full">
+        <CiHeart className="text-red-600 mr-2" size={24} />
+        <span className="text-black text-lg font-semibold">Made with Love in Nepal</span>
+        </div>
       </div>
 
-      <div className="bg-yellow-300">
-        <h2>About Code Paila</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae molestias laudantium ducimus tempora voluptate iste delectus laboriosam ipsum velit.</p>
+      {/* Yellow about heading box */}
+      <div className="bg-yellow-300 mb-10 shadow text-center">
+        <h2 className="text-2xl font-bold mb-2">About Code Paila</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae molestias
+          laudantium ducimus tempora voluptate iste delectus laboriosam ipsum velit.
+        </p>
       </div>
 
-      {/* Container about section */}
-      <div className="container mx-auto flex flex-col md:flex-row items-center gap-12">
+      {/* Container: Image + Description side by side */}
+      <div className="container mx-auto flex flex-col md:flex-row items-start gap-12">
         {/* Left: Image */}
         <div className="md:w-1/2">
           <img src={Img} alt="Code Paila Team" className="rounded-lg shadow-lg w-full" />
         </div>
-        {/* Right: Text */}
+
+        {/* Right: Description + Heading */}
         <div className="md:w-1/2">
           <h2 className="text-4xl font-bold mb-4">
             Where <span className="text-orange-500">Innovation</span> meets <span className="text-green-500">Traditions</span>
           </h2>
-          <p className="text-gray-700 mb-6">
+          <p className="text-gray-700">
             Code Paila is an IT company dedicated to creating software, web development solutions, and complete IT services.
             We aim to connect the world through meaningful digital solutions while embracing the rich traditions of Nepal.
           </p>
