@@ -7,10 +7,10 @@ import Portfolio from "./Portfolio";
 const Home = () => {
   return (
    <section>
-     <Hero />
-     <About />
-     <Services />
-     <Portfolio />
+     <Hero /><br />
+     <About /><br />
+     <Services /><br />
+     <Portfolio /><br />
    </section>
   );
 };
