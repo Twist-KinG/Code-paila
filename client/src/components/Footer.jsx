@@ -186,6 +186,11 @@ const Footer = () => {
               © {currentYear} CodePaila. Crafted with passion in the Himalayas.
               All rights reserved.
             </p>
+            {/* Admin Login Link */}
+            <Link
+              to="/adminlogin"
+              className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group">-<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+            </Link>
             <div className="flex space-x-8 text-sm">
               {/* Privacy Policy */}
               <a
@@ -204,15 +209,6 @@ const Footer = () => {
                 Terms of Service
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
               </a>
-
-              {/* Admin Login Link */}
-              <Link
-                to="/adminlogin"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group"
-              >
-                -
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
-              </Link>
             </div>
           </div>
         </div>
