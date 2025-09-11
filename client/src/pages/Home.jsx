@@ -4,7 +4,6 @@ import About from "./About";
 import Services from "./Services";
 import Portfolio from "./Portfolio";
 import Team from "./Team";
-import PageWrapper from "../components/PageWrapper";
 
 const Home = () => {
   return (
