@@ -60,7 +60,7 @@ const AdminLogin = () => {
                     </button>
                 </form>
                 <p className="mt-4 text-center text-gray-500">
-                    Don't have an account? <Link className="text-blue-600" to="/admin-signup">Signup</Link>
+                    Don't have an account? <Link className="text-blue-600" to="/adminsignup">Signup</Link>
                 </p>
             </div>
         </div>
