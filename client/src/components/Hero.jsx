@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -11,12 +10,13 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
+// Import your hero image properly
+import heroImage from "../assets/img/grp.png";
 
 const Hero = () => {
   const navigate = useNavigate();
 
   return (
-
     <section
       id="home"
       className="px-6 lg:px-30 py-24 bg-white relative overflow-hidden mt-15"
@@ -27,7 +27,7 @@ const Hero = () => {
         from-blue-50 via-white to-purple-50 animate-gradient-slow pointer-events-none"
       ></div>
 
-      {/* Floating Icons / Particles */}
+      {/* Floating Icons */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ y: [0, -15, 0] }}
@@ -69,7 +69,7 @@ const Hero = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-extrabold text-gray-900 leading-tight">
               Transform Your
               <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 animate-gradient-x">
@@ -78,17 +78,16 @@ const Hero = () => {
               <motion.span
                 animate={{ opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="block text-4xl lg:text-5xl mt-3 text-gray-700"
+                className="block text-3xl lg:text-5xl mt-3 text-gray-700"
               >
                 with Expert Solutions 🚀
               </motion.span>
             </h1>
 
             {/* Description */}
-            <p className="text-xl text-gray-600 max-w-2xl">
+            <p className="text-lg lg:text-xl text-gray-600 max-w-2xl">
               We craft cutting-edge software solutions tailored to your vision.
-              From web to mobile, cloud to AI — our team builds the future with
-              you.
+              From web to mobile, cloud to AI — our team builds the future with you.
             </p>
 
             {/* Buttons */}
@@ -112,17 +111,15 @@ const Hero = () => {
                 transition={{ type: "spring", stiffness: 300 }}
                 onClick={() => navigate("/services")}
                 className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full 
-                font-semibold hover:border-purple-500 hover:text-purple-600 
-                hover:bg-purple-50 transition-all hover:shadow-xl"
+                font-semibold hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 
+                hover:text-white transition-all hover:shadow-xl"
               >
-                <span className="transition-colors group-hover:text-purple-600">
-                  View Services
-                </span>
+                <span className="transition-colors">View Services</span>
               </motion.button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-10">
+            <dl className="grid grid-cols-3 gap-6 pt-10">
               {[
                 { value: "100+", label: "Projects" },
                 { value: "95%", label: "Satisfaction" },
@@ -133,13 +130,13 @@ const Hero = () => {
                   whileHover={{ scale: 1.1 }}
                   className="text-center bg-white/60 backdrop-blur-lg p-4 rounded-2xl shadow-md"
                 >
-                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <dt className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {stat.value}
-                  </div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  </dt>
+                  <dd className="text-gray-600 font-medium">{stat.label}</dd>
                 </motion.div>
               ))}
-            </div>
+            </dl>
           </motion.div>
 
           {/* Right Content */}
@@ -151,17 +148,16 @@ const Hero = () => {
           >
             <div className="relative group">
               <img
-                src="src/assets/img/grp.png"
-                alt="Modern IT Office"
-                className="w-full h-[600px] rounded-3xl object-cover shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500"
+                src={heroImage}
+                alt="Hero section illustration of IT team"
+                className="w-full h-[400px] lg:h-[600px] rounded-3xl object-cover shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500"
               />
-              <div className="absolute inset-0 rounded-3xl pointer-events-none"></div>
 
               {/* Floating Cards */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg flex items-center space-x-2"
+                className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg flex items-center space-x-2 border border-gradient-to-r from-blue-400 to-purple-400"
               >
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium text-gray-800">
@@ -172,7 +168,7 @@ const Hero = () => {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg flex items-center space-x-2"
+                className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg flex items-center space-x-2 border border-gradient-to-r from-yellow-400 to-orange-500"
               >
                 <FaStar className="h-4 w-4 text-yellow-500" />
                 <span className="text-sm font-medium text-gray-800">
@@ -184,7 +180,6 @@ const Hero = () => {
         </div>
       </div>
     </section>
-
   );
 };
 
