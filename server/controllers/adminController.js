@@ -1,17 +1,42 @@
+
 import Admin from "../models/Admin.js";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
-const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+// Generate JWT
+const generateToken = (id) =>
+    jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+
+// Signup
+export const signupAdmin = async (req, res) => {
+    const { name, email, password } = req.body;
+
+    const adminExists = await Admin.findOne({ email });
+    if (adminExists)
+        return res.status(400).json({ message: "Admin already exists" });
+
+    const admin = await Admin.create({ name, email, password });
+    if (admin) {
+        res.status(201).json({
+            _id: admin._id,
+            name: admin.name,
+            email: admin.email,
+            token: generateToken(admin._id),
+        });
+    } else {
+        res.status(400).json({ message: "Invalid admin data" });
+    }
 };
 
-// POST /api/admin/login
+// Login
 export const loginAdmin = async (req, res) => {
     const { email, password } = req.body;
     const admin = await Admin.findOne({ email });
+
     if (admin && (await admin.matchPassword(password))) {
         res.json({
             _id: admin._id,
+            name: admin.name,
             email: admin.email,
             token: generateToken(admin._id),
         });
@@ -20,14 +45,44 @@ export const loginAdmin = async (req, res) => {
     }
 };
 
-// GET /api/admin/profile
+// Get profile
 export const getAdminProfile = async (req, res) => {
-    if (req.admin) {
-        res.json({
-            _id: req.admin._id,
-            email: req.admin.email,
-        });
-    } else {
-        res.status(404).json({ message: "Admin not found" });
+    res.json(req.admin);
+};
+
+// Update profile (no file upload)
+export const updateAdminProfile = async (req, res) => {
+    try {
+        const admin = await Admin.findById(req.admin._id);
+        if (!admin) return res.status(404).json({ message: "Admin not found" });
+
+        const { name, email, phone, dob } = req.body;
+
+        if (name) admin.name = name;
+        if (email) admin.email = email;
+        if (phone) admin.phone = phone;
+        if (dob) admin.dob = dob;
+
+        await admin.save();
+        res.json({ message: "Profile updated successfully", admin });
+    } catch (err) {
+        console.error("Update admin profile error:", err);
+        res.status(500).json({ message: "Server error" });
     }
+};
+
+// Change password
+export const changeAdminPassword = async (req, res) => {
+    const { oldPassword, newPassword } = req.body;
+    const admin = await Admin.findById(req.admin._id);
+    if (!admin) return res.status(404).json({ message: "Admin not found" });
+
+    const isMatch = await bcrypt.compare(oldPassword, admin.password);
+    if (!isMatch) return res.status(400).json({ message: "Old password is incorrect" });
+
+    const salt = await bcrypt.genSalt(10);
+    admin.password = await bcrypt.hash(newPassword, salt);
+    await admin.save();
+
+    res.json({ message: "Password changed successfully" });
 };
