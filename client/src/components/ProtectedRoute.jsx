@@ -4,7 +4,7 @@ import AuthContext from "../context/AuthContext";
 
 const ProtectedRoute = ({ children }) => {
     const { admin } = useContext(AuthContext);
-    if (!admin) return <Navigate to="/adminlogin" />;
+    if (!admin) return <Navigate to="/" />;
     return children;
 };
 
