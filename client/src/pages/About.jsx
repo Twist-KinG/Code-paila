@@ -1,6 +1,7 @@
 import React from "react";
 import Img from "../assets/img/bg.png";
 import { FiGlobe, FiUsers, FiAward, FiZap, FiHeart } from "react-icons/fi";
+import PageWrapper from "../components/PageWrapper";
 
 const About = () => {
   const features = [
@@ -35,6 +36,7 @@ const About = () => {
   ];
 
   return (
+    <PageWrapper>
     <section id="about" className="px-30 py-24 bg-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -131,6 +133,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </PageWrapper>
   );
 };
 

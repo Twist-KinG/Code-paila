@@ -2,18 +2,19 @@ import React from "react";
 import { FaLinkedin, FaTwitter, FaGithub, FaCoffee } from "react-icons/fa";
 import { HiOutlineBadgeCheck, HiOutlineHeart } from "react-icons/hi";
 import { Navigate, useNavigate } from "react-router-dom";
+import PageWrapper from "../components/PageWrapper";
 
 const Team = () => {
 
     const navigate = useNavigate();
     const teamMembers = [
         {
-            name: "Vrastachari Karki",
+            name: "Rajesh Karki",
             role: "Manager",
             image: "./src/assets/img/rajesh.jpg",
-            bio: "Great fan of Jonny Sins.Role Model.",
-            skills: ["React 4hrs navbar", "Node.js", ".net", "C#", "Leadership","Back in Software Development"],
-            achievements: "-20 Projects Led",
+            bio: "Transforming Nepal's tech landscape with 10+ years of architectural brilliance.",
+            skills: ["React", "Node.js", ".net", "C#", "Leadership","Back in Software Development"],
+            achievements: "+20 Projects Led",
             color: "from-blue-500 to-cyan-500",
         },
          {
@@ -64,6 +65,7 @@ const Team = () => {
     ];
 
     return (
+        <PageWrapper>
         <section
             id="team"
             className="px-30 py-24 bg-white relative overflow-hidden"
@@ -203,6 +205,7 @@ const Team = () => {
                 </div>
             </div>
         </section>
+        </PageWrapper>
     );
 };
 

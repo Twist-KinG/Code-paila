@@ -1,5 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import PageWrapper from "./components/PageWrapper";
 
 // basic user interface pages
 import Layout from "./components/Layout";
@@ -42,6 +43,7 @@ const PlaceholderPage = ({ title }) => (
 
 function App() {
   return (
+    <PageWrapper>
     <AuthProvider>
       <Router>
         <Routes>
@@ -86,6 +88,7 @@ function App() {
         </Routes>
       </Router>
     </AuthProvider>
+    </PageWrapper>
   );
 }
 
