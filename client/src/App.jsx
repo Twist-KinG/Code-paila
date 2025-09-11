@@ -7,6 +7,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import AdminLogin from "./components/Admin/AdminLogin";
+import AdminSignup from "./components/Admin/AdminSignup";
 import AdminLayout from "./components/Admin/AdminLayout";
 import AdminSummary from "./components/Admin/AdminSummary";
 import Profile from "./components/Admin/Profile";
@@ -28,6 +29,7 @@ function App() {
 
           {/* Admin Login */}
           <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/adminsignup" element={<AdminSignup />} />
 
           {/* Protected Admin Section */}
           <Route
