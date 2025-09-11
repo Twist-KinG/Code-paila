@@ -8,6 +8,7 @@ const Careers = () => {
             type: "Full-Time",
             description:
                 "We are looking for a skilled Frontend Developer to build stunning UIs using React, Tailwind, and modern web technologies.",
+                status: "Closed"
         },
         {
             title: "Backend Developer",
@@ -15,6 +16,7 @@ const Careers = () => {
             type: "Full-Time",
             description:
                 "Join our backend team to design APIs, manage databases, and build scalable server-side solutions.",
+                status: "Closed"
         },
         {
             title: "UI/UX Designer",
@@ -22,6 +24,7 @@ const Careers = () => {
             type: "Part-Time",
             description:
                 "We are seeking a creative designer to craft intuitive and beautiful user interfaces.",
+                status: "Closed"
         },
         {
             title: "Intern - Web Development",
@@ -29,6 +32,7 @@ const Careers = () => {
             type: "Internship",
             description:
                 "An opportunity for freshers or students to gain hands-on experience in web development.",
+                status: "Closed"
         },
         {
             title: "Documentation Writer",
@@ -36,6 +40,7 @@ const Careers = () => {
             type: "Internship",
             description:
                 "An opportunity for freshers or students to gain hands-on experience in documentation.",
+                status: "Apply Now"
         },
     ];
 
@@ -69,7 +74,7 @@ const Careers = () => {
                             </span>
                             <p className="text-gray-600 mb-6">{job.description}</p>
                             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                                {/* Apply Now */} Closed Now
+                                {job.status} 
                             </button>
                         </div>
                     ))}

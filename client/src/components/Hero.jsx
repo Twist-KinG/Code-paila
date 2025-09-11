@@ -149,7 +149,7 @@ const Hero = () => {
           >
             <div className="relative group">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                src="src/assets/img/grp.png"
                 alt="Modern IT Office"
                 className="w-full h-[600px] rounded-3xl object-cover shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500"
               />
