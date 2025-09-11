@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMobile, FaGlobe, FaMixcloud, FaDatabase, FaPalette, FaUserShield, FaReact } from "react-icons/fa";
-import PageWrapper from "../components/PageWrapper";
+
 
 const Services = () => {
   const service = [

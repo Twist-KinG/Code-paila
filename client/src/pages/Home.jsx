@@ -15,7 +15,7 @@ const Home = () => {
       <Portfolio />
       <Team />
     </section>
-    </PageWrapper>
+
   );
 };
 
