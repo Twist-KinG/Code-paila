@@ -2,7 +2,7 @@ import React from "react";
 import { FaLinkedin, FaTwitter, FaGithub, FaCoffee } from "react-icons/fa";
 import { HiOutlineBadgeCheck, HiOutlineHeart } from "react-icons/hi";
 import { Navigate, useNavigate } from "react-router-dom";
-import PageWrapper from "../components/PageWrapper";
+
 
 const Team = () => {
 
@@ -65,7 +65,7 @@ const Team = () => {
     ];
 
     return (
-        <PageWrapper>
+    
         <section
             id="team"
             className="px-30 py-24 bg-white relative overflow-hidden"
@@ -205,7 +205,6 @@ const Team = () => {
                 </div>
             </div>
         </section>
-        </PageWrapper>
     );
 };
 

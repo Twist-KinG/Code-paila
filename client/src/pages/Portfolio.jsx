@@ -1,7 +1,7 @@
 import React from "react";
 import { FaExternalLinkAlt, FaGithub, FaStar } from "react-icons/fa";
 import { HiTrendingUp } from "react-icons/hi";
-import PageWrapper from "../components/PageWrapper";
+
 
 const Portfolio = () => {
   const projects = [
@@ -53,7 +53,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <PageWrapper>
+
     <section id="portfolio" className="px-30 py-24 bg-white relative overflow-hidden">
       <div className="max-w-500 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
@@ -160,7 +160,7 @@ const Portfolio = () => {
         </div>
       </div>
     </section>
-    </PageWrapper>
+
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMobile, FaGlobe, FaMixcloud, FaDatabase, FaPalette, FaUserShield, FaReact } from "react-icons/fa";
-import PageWrapper from "../components/PageWrapper";
+
 
 const Services = () => {
   const service = [
@@ -56,7 +56,6 @@ const Services = () => {
 
 
   return (
-    <PageWrapper>
    <section className="px-30 py-24 bg-white relative overflow-hidden">
 
       <div className="max-w-500 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -131,7 +130,6 @@ const Services = () => {
         </div>
       </div>
     </section>  
-    </PageWrapper>
   );
 };
 

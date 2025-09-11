@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PageWrapper from "./components/PageWrapper";
+
 
 // Public Pages
 import Layout from "./components/Layout";
@@ -40,9 +40,7 @@ function App() {
             path="/"
             element={
               <Layout>
-                <PageWrapper>
                   <Home />
-                </PageWrapper>
               </Layout>
             }
           />
@@ -50,9 +48,7 @@ function App() {
             path="/about"
             element={
               <Layout>
-                <PageWrapper>
                   <About />
-                </PageWrapper>
               </Layout>
             }
           />
@@ -60,9 +56,7 @@ function App() {
             path="/services"
             element={
               <Layout>
-                <PageWrapper>
                   <Services />
-                </PageWrapper>
               </Layout>
             }
           />
@@ -70,9 +64,7 @@ function App() {
             path="/portfolio"
             element={
               <Layout>
-                <PageWrapper>
                   <Portfolio />
-                </PageWrapper>
               </Layout>
             }
           />
@@ -80,9 +72,7 @@ function App() {
             path="/team"
             element={
               <Layout>
-                <PageWrapper>
                   <Team />
-                </PageWrapper>
               </Layout>
             }
           />
@@ -90,9 +80,7 @@ function App() {
             path="/contact"
             element={
               <Layout>
-                <PageWrapper>
                   <Contact />
-                </PageWrapper>
               </Layout>
             }
           />
@@ -100,9 +88,7 @@ function App() {
             path="/careers"
             element={
               <Layout>
-                <PageWrapper>
                   <Careers />
-                </PageWrapper>
               </Layout>
             }
           />
