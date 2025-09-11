@@ -1,8 +1,10 @@
 import React from 'react';
 import { FiSend, FiMessageCircle } from 'react-icons/fi';
+import PageWrapper from '../components/PageWrapper';
 
 const Contact = () => {
   return (
+    <PageWrapper>
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
@@ -104,6 +106,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </PageWrapper>
   );
 };
 
