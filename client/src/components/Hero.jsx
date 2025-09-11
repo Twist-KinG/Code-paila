@@ -10,13 +10,13 @@ import {
   FaStar,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
+import PageWrapper from "../components/PageWrapper";
 
 const Hero = () => {
   const navigate = useNavigate();
 
   return (
-  
+    <PageWrapper>
     <section
       id="home"
       className="px-6 lg:px-30 py-24 bg-white relative overflow-hidden mt-15"
@@ -184,7 +184,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-
+    </PageWrapper>
   );
 };
 

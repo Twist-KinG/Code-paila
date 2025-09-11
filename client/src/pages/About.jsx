@@ -35,7 +35,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden">
+    <PageWrapper>
+    <section id="about" className="px-30 py-24 bg-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
