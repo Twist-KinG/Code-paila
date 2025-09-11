@@ -84,7 +84,7 @@ const Team = () => {
                     <h2 className="text-5xl font-bold text-gray-900 mb-6">
                         Meet Our{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-                            Rockstars
+                            Developers
                         </span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -178,7 +178,7 @@ const Team = () => {
                                     {member.skills.map((skill, skillIndex) => (
                                         <span
                                             key={skillIndex}
-                                            className={`bg-gradient-to-r ${member.color} text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}
+                                            className={`bg-gradient-to-r ${member.color} text-white px-3 py-1 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}
                                         >
                                             {skill}
                                         </span>

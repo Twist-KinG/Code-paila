@@ -153,7 +153,7 @@ const Hero = () => {
                 alt="Modern IT Office"
                 className="w-full h-[600px] rounded-3xl object-cover shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-3xl pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-3xl pointer-events-none"></div>
 
               {/* Floating Cards */}
               <motion.div

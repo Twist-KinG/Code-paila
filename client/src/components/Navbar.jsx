@@ -38,14 +38,14 @@ const Navbar = () => {
           {/* Logo (clickable) */}
           <div
             onClick={() => navigate("/")}
-            className="flex items-center space-x-2 cursor-pointer"
+            className="flex items-center space-x-1 cursor-pointer"
           >
             <img
               src={Logo}
               alt="CodePaila Logo"
-              className="h-20 w-auto transition-transform duration-300 hover:scale-105"
+              className="h-25 w-auto transition-transform duration-300 hover:scale-105 mt-4"
             />
-            <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 bg-clip-text text-transparent">
+            <span className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 bg-clip-text text-transparent">
               CodePaila
             </span>
           </div>
