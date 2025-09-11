@@ -1,15 +1,30 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaTachometerAlt, FaUsers, FaUserCircle, FaCog } from "react-icons/fa";
+import {
+  FaTachometerAlt,
+  FaUsers,
+  FaUserCircle,
+  FaCog,
+  FaBriefcase,
+  FaRegNewspaper,
+  FaServicestack,
+  FaAddressBook,
+  FaFileAlt,
+} from "react-icons/fa";
 
 const Sidebar = () => {
-  
   const links = [
-    { to: "/admin", label: "Summary", icon: FaTachometerAlt },
+    { to: "/admin", label: "Dashboard", icon: FaTachometerAlt },
     { to: "/admin/profile", label: "Profile", icon: FaUserCircle },
-    { to: "/admin/settings", label: "Settings", icon: FaCog },
+    { to: "/admin/admin-control", label: "Admin Control", icon: FaUserCircle },
+    { to: "/admin/career", label: "Career", icon: FaBriefcase },
+    { to: "/admin/team", label: "Team", icon: FaUsers },
+    { to: "/admin/services", label: "Services", icon: FaServicestack },
+    { to: "/admin/portfolio", label: "Portfolio", icon: FaFileAlt },
+    { to: "/admin/contact", label: "Contact", icon: FaAddressBook },
+    { to: "/admin/blog", label: "Blog", icon: FaRegNewspaper },
+    { to: "/admin/setting", label: "Setting", icon: FaCog },
   ];
-
 
   return (
     <aside className="w-64 h-screen bg-gradient-to-b from-blue-700 to-purple-800 text-white shadow-lg flex flex-col">

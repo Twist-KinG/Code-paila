@@ -24,8 +24,8 @@ const AdminSummary = () => {
     ];
 
     return (
-        <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-gray-900">Admin Summary</h2>
+        <div className="p-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Admin Summary</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {summaryFeatures.map((feature, index) => (
                     <div
