@@ -19,7 +19,7 @@ const AdminLogin = () => {
                 password,
             });
             login(data);
-            navigate("/admin-dashboard");
+            navigate("/admin");
         } catch (err) {
             setError(err.response?.data?.message || "Login failed");
         }
