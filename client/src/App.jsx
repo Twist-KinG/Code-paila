@@ -33,14 +33,6 @@ import TeamManagement from "./components/Admin/TeamManagement";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
 
-// Placeholder pages for admin routes
-const PlaceholderPage = ({ title }) => (
-  <div className="p-8">
-    <h2 className="text-3xl font-bold mb-4">{title}</h2>
-    <p>This page is under construction.</p>
-  </div>
-);
-
 function App() {
   return (
     <PageWrapper>

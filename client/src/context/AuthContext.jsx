@@ -17,6 +17,7 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         setAdmin(null);
         localStorage.removeItem("admin");
+        
     };
 
     return (
