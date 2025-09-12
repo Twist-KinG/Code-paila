@@ -6,9 +6,8 @@ import {
   FaMapMarkerAlt,
   FaCode,
   FaServer,
-  FaShieldAlt,
-  FaStar,
-} from "react-icons/fa";
+  FaShieldAlt, FaStar, } from "react-icons/fa";
+
 import { useNavigate } from "react-router-dom";
 
 // Import your hero image properly
