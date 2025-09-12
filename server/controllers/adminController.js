@@ -45,6 +45,34 @@ export const loginAdmin = async (req, res) => {
     }
 };
 
+// Add new admin
+export const addAdmin = async (req, res) => {
+    try {
+        const { name, email, password, role } = req.body;
+
+        const existing = await Admin.findOne({ email });
+        if (existing) {
+            return res.status(400).json({ message: "Email already in use" });
+        }
+
+        const admin = await Admin.create({ name, email, password, role });
+        res.status(201).json({ message: "Admin created successfully", admin });
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error: error.message });
+    }
+};
+
+// Get all admins
+export const getAllAdmins = async (req, res) => {
+    try {
+        const admins = await Admin.find({});
+        res.json(admins);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Server error" });
+    }
+}
+
 // Get profile
 export const getAdminProfile = async (req, res) => {
     res.json(req.admin);

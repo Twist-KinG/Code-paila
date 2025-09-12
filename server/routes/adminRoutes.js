@@ -3,6 +3,8 @@ import express from "express";
 import {
     signupAdmin,
     loginAdmin,
+    addAdmin,
+    getAllAdmins,
     getAdminProfile,
     updateAdminProfile,
     changeAdminPassword
@@ -15,7 +17,10 @@ const router = express.Router();
 router.post("/signup", signupAdmin);
 router.post("/login", loginAdmin);
 
+
 // Protected routes
+router.post("/", protect, addAdmin);
+router.get("/list", protect, getAllAdmins);
 router.get("/profile", protect, getAdminProfile);
 router.put("/profile", protect, updateAdminProfile);
 router.put("/change-password", protect, changeAdminPassword);
