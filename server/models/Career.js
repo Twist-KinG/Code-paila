@@ -8,6 +8,7 @@ const CareerSchema = new mongoose.Schema(
         type: { type: String, required: true },
         description: { type: String, required: true },
         status: { type: String, default: "Closed" },
+        isPublic: { type: Boolean, default: false },
     },
     { timestamps: true }
 );

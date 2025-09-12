@@ -1,9 +1,9 @@
 import express from "express";
-import { getCareers } from "../controllers/careerController.js";
+import { getPublicCareers } from "../controllers/careerController.js";
 
 const router = express.Router();
 
 // Public routes
-router.get("/", getCareers);
+router.get("/", getPublicCareers);
 
 export default router;

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 
@@ -8,9 +9,10 @@ const CareerManagement = () => {
   const [formData, setFormData] = useState({
     title: "",
     location: "",
-    type: "",
+    type: "Full-Time",
     description: "",
     status: "Closed",
+    isPublic: false, // new field
   });
   const [editId, setEditId] = useState(null);
   const [popupMessage, setPopupMessage] = useState("");
@@ -67,9 +69,10 @@ const CareerManagement = () => {
       setFormData({
         title: "",
         location: "",
-        type: "",
+        type: "Full-Time",
         description: "",
         status: "Closed",
+        isPublic: false,
       });
       fetchCareers();
     } catch (err) {
@@ -85,6 +88,7 @@ const CareerManagement = () => {
       type: career.type,
       description: career.description,
       status: career.status,
+      isPublic: career.isPublic || false,
     });
     setShowForm(true);
   };
@@ -95,6 +99,27 @@ const CareerManagement = () => {
       const res = await fetch(`http://localhost:5000/api/admin/career/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${admin.token}` },
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message);
+      setPopupMessage(data.message);
+      setTimeout(() => setPopupMessage(""), 2000);
+      fetchCareers();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const togglePublic = async (career) => {
+    if (!admin || !admin.token) return;
+    try {
+      const res = await fetch(`http://localhost:5000/api/admin/career/${career._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${admin.token}`,
+        },
+        body: JSON.stringify({ isPublic: !career.isPublic }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message);
@@ -139,7 +164,16 @@ const CareerManagement = () => {
             >
               {career.status}
             </span>
-            <div className="flex justify-center gap-2">
+
+            <div className="flex justify-center gap-2 flex-wrap">
+              <button
+                onClick={() => togglePublic(career)}
+                className={`px-4 py-1 rounded ${career.isPublic ? "bg-green-500 text-white" : "bg-gray-400 text-white"
+                  }`}
+              >
+                {career.isPublic ? "Public" : "Private"}
+              </button>
+
               <button
                 onClick={() => handleEdit(career)}
                 className="bg-yellow-400 text-white px-4 py-1 rounded hover:bg-yellow-500"
@@ -167,41 +201,53 @@ const CareerManagement = () => {
             <h3 className="text-2xl font-semibold mb-4 text-center">
               {editId ? "Edit Career" : "Add Career"}
             </h3>
+
+            <label className="block font-semibold mb-1">Title</label>
             <input
               type="text"
               name="title"
-              placeholder="Title"
+              placeholder="Job Title"
               className="w-full border p-2 rounded mb-3"
               value={formData.title}
               onChange={handleChange}
               required
             />
+
+            <label className="block font-semibold mb-1">Location</label>
             <input
               type="text"
               name="location"
-              placeholder="Location"
+              placeholder="Job Location"
               className="w-full border p-2 rounded mb-3"
               value={formData.location}
               onChange={handleChange}
               required
             />
-            <input
-              type="text"
+
+            <label className="block font-semibold mb-1">Type</label>
+            <select
               name="type"
-              placeholder="Type (Full-Time / Part-Time / Internship)"
               className="w-full border p-2 rounded mb-3"
               value={formData.type}
               onChange={handleChange}
-              required
-            />
+            >
+              <option value="Full-Time">Full-Time</option>
+              <option value="Part-Time">Part-Time</option>
+              <option value="Internship">Internship</option>
+              <option value="Placement">Placement</option>
+            </select>
+
+            <label className="block font-semibold mb-1">Description</label>
             <textarea
               name="description"
-              placeholder="Description"
+              placeholder="Job Description"
               className="w-full border p-2 rounded mb-3"
               value={formData.description}
               onChange={handleChange}
               required
             ></textarea>
+
+            <label className="block font-semibold mb-1">Status</label>
             <select
               name="status"
               className="w-full border p-2 rounded mb-3"
@@ -241,7 +287,6 @@ const CareerManagement = () => {
         </div>
       )}
 
-      {/* Tailwind animation */}
       <style>
         {`
           @keyframes fadeInOut {

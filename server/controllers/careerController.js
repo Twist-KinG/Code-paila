@@ -41,3 +41,13 @@ export const deleteCareer = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
+
+// get public careers 
+export const getPublicCareers = async (req, res) => {
+    try {
+        const careers = await Career.find({ isPublic: true }).sort({ createdAt: -1 });
+        res.status(200).json(careers);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
