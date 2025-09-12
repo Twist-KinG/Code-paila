@@ -3,7 +3,7 @@ import React from 'react'
 const BlogManagement = () => {
   return (
     <div>
-      asds
+      blog management
     </div>
   )
 }
