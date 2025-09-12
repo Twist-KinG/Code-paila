@@ -1,51 +1,26 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 
 const Careers = () => {
-    const jobOpenings = [
-        {
-            title: "Frontend Developer",
-            location: "Remote / Nepal",
-            type: "Full-Time",
-            description:
-                "We are looking for a skilled Frontend Developer to build stunning UIs using React, Tailwind, and modern web technologies.",
-                status: "Closed"
-        },
-        {
-            title: "Backend Developer",
-            location: "Remote / Nepal",
-            type: "Full-Time",
-            description:
-                "Join our backend team to design APIs, manage databases, and build scalable server-side solutions.",
-                status: "Closed"
-        },
-        {
-            title: "UI/UX Designer",
-            location: "Remote / Nepal",
-            type: "Part-Time",
-            description:
-                "We are seeking a creative designer to craft intuitive and beautiful user interfaces.",
-                status: "Closed"
-        },
-        {
-            title: "Intern - Web Development",
-            location: "Remote / Nepal",
-            type: "Internship",
-            description:
-                "An opportunity for freshers or students to gain hands-on experience in web development.",
-                status: "Closed"
-        },
-        {
-            title: "Documentation Writer",
-            location: "On-Site / Nepal",
-            type: "Internship",
-            description:
-                "An opportunity for freshers or students to gain hands-on experience in documentation.",
-                status: "Apply Now"
-        },
-    ];
+    const [jobOpenings, setJobOpenings] = useState([]);
+
+    // Fetch public careers from backend
+    const fetchCareers = async () => {
+        try {
+            const res = await fetch("http://localhost:5000/api/careers");
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.message || "Failed to fetch careers");
+            setJobOpenings(data);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    useEffect(() => {
+        fetchCareers();
+    }, []);
 
     return (
-
         <section className="py-24 bg-gray-50 relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
@@ -61,9 +36,9 @@ const Careers = () => {
 
                 {/* Job Openings */}
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {jobOpenings.map((job, index) => (
+                    {jobOpenings.map((job) => (
                         <div
-                            key={index}
+                            key={job._id}
                             className="bg-white rounded-3xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border border-gray-200"
                         >
                             <h3 className="text-2xl font-semibold text-gray-900 mb-2">
@@ -74,8 +49,14 @@ const Careers = () => {
                                 {job.type}
                             </span>
                             <p className="text-gray-600 mb-6">{job.description}</p>
-                            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                                {job.status} 
+                            <button
+                                className={`px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 ${job.status === "Closed"
+                                        ? "bg-gray-400 text-white cursor-not-allowed"
+                                        : "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                                    }`}
+                                disabled={job.status === "Closed"}
+                            >
+                                {job.status}
                             </button>
                         </div>
                     ))}
@@ -90,12 +71,11 @@ const Careers = () => {
                         We’re always looking for talented individuals. Send us your resume and we might reach out!
                     </p>
                     <button className="bg-gradient-to-r from-teal-500 to-green-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                        {/* Submit Your Resume */} Closed for now
+                        Closed for now
                     </button>
                 </div>
             </div>
         </section>
-
     );
 };
 

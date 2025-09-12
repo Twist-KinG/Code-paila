@@ -1,15 +1,7 @@
 
 import express from "express";
-import {
-    signupAdmin,
-    loginAdmin,
-    addAdmin,
-    getAllAdmins,
-    getAdminProfile,
-    updateAdminProfile,
-    changeAdminPassword
-} from "../controllers/adminController.js";
 import { protect } from "../middleware/AuthMiddleware.js";
+import { signupAdmin, loginAdmin, addAdmin, getAllAdmins, getAdminProfile, updateAdminProfile, changeAdminPassword } from "../controllers/adminController.js";
 
 const router = express.Router();
 
