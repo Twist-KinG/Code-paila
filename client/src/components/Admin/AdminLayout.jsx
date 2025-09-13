@@ -20,23 +20,14 @@ const AdminLayout = () => {
                 <header className="flex justify-between items-center bg-white px-4 md:px-8 py-4 shadow-md">
                     <div className="flex items-center gap-4">
                         {/* Hamburger for mobile */}
-                        <button
-                            onClick={() => setSidebarOpen(!sidebarOpen)}
-                            className="text-gray-800 md:hidden focus:outline-none"
-                        >
+                        <button onClick={() => setSidebarOpen(!sidebarOpen)}
+                            className="text-gray-800 md:hidden focus:outline-none">
                             {sidebarOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-                        </button>
-                        <h1 className="text-2xl font-bold text-gray-900">
-                            Welcome, {admin?.name}
-                        </h1>
+                        </button>  
+                        <h1 className="text-2xl font-bold text-gray-900">Welcome, {admin?.name}</h1>
                     </div>
 
-                    <button
-                        onClick={logout}
-                        className="bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition"
-                    >
-                        Logout
-                    </button>
+                    <button onClick={logout} className="bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition">Logout</button>
                 </header>
 
                 {/* Main content */}
