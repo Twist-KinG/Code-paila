@@ -194,8 +194,7 @@ const Team = () => {
             </span>
             <button
               onClick={() => navigate("/careers")}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-            >
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
               We're Hiring!
             </button>
           </div>
