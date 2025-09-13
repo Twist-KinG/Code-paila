@@ -71,15 +71,15 @@ const AdminControl = () => {
     };
 
     return (
+        
         <div className="p-4 md:p-8 relative">
+           
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                
                 <h2 className="text-3xl font-bold text-gray-900">Admin Control</h2>
-                <button
-                    onClick={() => setShowForm(true)}
-                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-                >
-                    + Add Admin
-                </button>
+                
+                <button onClick={() => setShowForm(true)}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">+ Add Admin</button>
             </div>
 
             <p className="text-gray-700 mb-6">
@@ -88,11 +88,10 @@ const AdminControl = () => {
 
             {/* Admin Cards */}
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                
                 {admins.map((adm) => (
-                    <div
-                        key={adm._id}
-                        className="bg-white p-4 rounded-xl shadow-md text-center transform hover:-translate-y-1 transition-all"
-                    >
+
+                    <div key={adm._id} className="bg-white p-4 rounded-xl shadow-md text-center transform hover:-translate-y-1 transition-all">
                         {/* Profile Photo or Icon */}
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full overflow-hidden border-2 border-purple-600 flex items-center justify-center bg-gray-200">
                             {adm.profileImage ? (
@@ -118,13 +117,13 @@ const AdminControl = () => {
             {/* Add Admin Modal */}
             {showForm && (
                 <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-20 backdrop-blur-xs z-50 px-4">
-                    <form
-                        onSubmit={handleSubmit}
-                        className="bg-white/90 p-6 rounded-xl w-full max-w-md shadow-lg backdrop-blur-sm"
-                    >
+
+                    <form onSubmit={handleSubmit} className="bg-white/90 p-6 rounded-xl w-full max-w-md shadow-lg backdrop-blur-sm">
+                        
                         <h3 className="text-2xl font-semibold mb-4 text-center">
                             Add New Admin
                         </h3>
+                        
                         <input
                             type="text"
                             name="name"
@@ -134,6 +133,7 @@ const AdminControl = () => {
                             onChange={handleChange}
                             required
                         />
+
                         <input
                             type="email"
                             name="email"
@@ -143,6 +143,7 @@ const AdminControl = () => {
                             onChange={handleChange}
                             required
                         />
+
                         <input
                             type="password"
                             name="password"
@@ -152,31 +153,19 @@ const AdminControl = () => {
                             onChange={handleChange}
                             required
                         />
-                        <select
-                            name="role"
-                            className="w-full border p-2 rounded mb-3"
-                            value={formData.role}
-                            onChange={handleChange}
-                        >
+
+                        <select name="role" className="w-full border p-2 rounded mb-3" value={formData.role} onChange={handleChange}>
+                            
                             <option value="SuperAdmin">Super Admin</option>
                             <option value="Admin">Admin</option>
                             <option value="General">General</option>
                         </select>
 
                         <div className="flex justify-end gap-2 flex-wrap">
-                            <button
-                                type="button"
-                                onClick={() => setShowForm(false)}
-                                className="px-4 py-2 bg-gray-400 text-white rounded-lg"
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                type="submit"
-                                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-                            >
-                                Save
-                            </button>
+
+                            <button type="button" onClick={() => setShowForm(false)} className="px-4 py-2 bg-gray-400 text-white rounded-lg">Cancel</button>
+                            
+                            <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Save</button>
                         </div>
                     </form>
                 </div>

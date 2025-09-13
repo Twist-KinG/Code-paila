@@ -73,6 +73,7 @@ const Profile = () => {
         {/* Profile Card */}
         <div className="bg-white bg-opacity-80 backdrop-blur-md p-6 rounded-2xl shadow-md text-center transform hover:-translate-y-1 transition-all">
           <div className="flex flex-col items-center">
+
             <img
               src={formData.profileImage || "/default-avatar.png"}
               alt="Profile"
@@ -81,6 +82,7 @@ const Profile = () => {
                 document.getElementById("profileImageInput").click()
               }
             />
+
             <input
               id="profileImageInput"
               type="file"
@@ -88,14 +90,19 @@ const Profile = () => {
               className="hidden"
               onChange={handleFileChange}
             />
+
             <h3 className="text-xl font-semibold mb-1">{formData.name}</h3>
+
             <p className="text-gray-500 mb-2">{profile.role || "Admin"}</p>
+
             <p className="text-gray-600 text-sm mb-1">
               Email: {formData.email}
             </p>
+
             <p className="text-gray-600 text-sm mb-1">
               Phone: {formData.phone || "N/A"}
             </p>
+
             <p className="text-gray-600 text-sm mb-2">
               DOB: {formData.dob || "N/A"} ({age} years)
             </p>
@@ -103,15 +110,16 @@ const Profile = () => {
             {!editMode ? (
               <button
                 onClick={() => setEditMode(true)}
-                className="mt-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition"
-              >
+                className="mt-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
                 Edit Profile
               </button>
+
             ) : (
+                
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-2 mt-2 text-gray-700"
-              >
+                  className="flex flex-col gap-2 mt-2 text-gray-700">
+                  
                 <input
                   type="text"
                   name="name"
@@ -120,7 +128,8 @@ const Profile = () => {
                   onChange={handleChange}
                   className="border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-600"
                   required
-                />
+                  />
+                  
                 <input
                   type="email"
                   name="email"
@@ -129,7 +138,8 @@ const Profile = () => {
                   onChange={handleChange}
                   className="border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-600"
                   required
-                />
+                  />
+                  
                 <input
                   type="text"
                   name="phone"
@@ -137,7 +147,8 @@ const Profile = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-600"
-                />
+                  />
+                  
                 <input
                   type="date"
                   name="dob"
@@ -145,22 +156,17 @@ const Profile = () => {
                   value={formData.dob}
                   onChange={handleChange}
                   className="border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-600"
-                />
+                  />
+                  
                 <div className="flex gap-2 mt-2 flex-wrap justify-center">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition disabled:opacity-50"
-                  >
+                  <button type="submit" disabled={loading}
+                    className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition disabled:opacity-50">
                     {loading ? "Saving..." : "Save Changes"}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setEditMode(false)}
-                    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition"
-                  >
-                    Cancel
-                  </button>
+                    </button>
+                    
+                  <button type="button" onClick={() => setEditMode(false)}
+                      className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition">Cancel</button>
+                    
                 </div>
               </form>
             )}
