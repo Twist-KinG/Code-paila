@@ -135,21 +135,17 @@ const CareerManagement = () => {
     <div className="p-8 relative">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold text-gray-900">Career Management</h2>
-        <button
-          onClick={() => setShowForm(true)}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-        >
-          + Add Career
-        </button>
+        
+        <button onClick={() => setShowForm(true)}
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">+ Add Career</button>
       </div>
 
       {/* Career Cards */}
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {careers.map((career) => (
-          <div
-            key={career._id}
-            className="bg-white p-6 rounded-2xl shadow-md text-center transform hover:-translate-y-1 transition-all"
-          >
+          
+          <div key={career._id}
+            className="bg-white p-6 rounded-2xl shadow-md text-center transform hover:-translate-y-1 transition-all">
             <h3 className="text-xl font-semibold mb-2">{career.title}</h3>
             <p className="text-gray-500 mb-2">{career.location}</p>
             <span className="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full font-semibold mb-4">
@@ -160,8 +156,7 @@ const CareerManagement = () => {
               className={`inline-block px-3 py-1 rounded-full font-semibold mb-4 ${career.status === "Closed"
                   ? "bg-red-100 text-red-600"
                   : "bg-green-100 text-green-600"
-                }`}
-            >
+                }`}>
               {career.status}
             </span>
 
@@ -169,23 +164,16 @@ const CareerManagement = () => {
               <button
                 onClick={() => togglePublic(career)}
                 className={`px-4 py-1 rounded ${career.isPublic ? "bg-green-500 text-white" : "bg-gray-400 text-white"
-                  }`}
-              >
+                  }`}>
                 {career.isPublic ? "Public" : "Private"}
               </button>
 
-              <button
-                onClick={() => handleEdit(career)}
-                className="bg-yellow-400 text-white px-4 py-1 rounded hover:bg-yellow-500"
-              >
-                Edit
-              </button>
-              <button
-                onClick={() => handleDelete(career._id)}
-                className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600"
-              >
-                Delete
-              </button>
+              <button onClick={() => handleEdit(career)}
+                className="bg-yellow-400 text-white px-4 py-1 rounded hover:bg-yellow-500">Edit</button>
+              
+              <button onClick={() => handleDelete(career._id)}
+                className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600">Delete</button>
+              
             </div>
           </div>
         ))}
@@ -196,8 +184,7 @@ const CareerManagement = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50 px-4">
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-6 rounded-xl w-full max-w-md shadow-lg"
-          >
+            className="bg-white p-6 rounded-xl w-full max-w-md shadow-lg">
             <h3 className="text-2xl font-semibold mb-4 text-center">
               {editId ? "Edit Career" : "Add Career"}
             </h3>
@@ -229,8 +216,7 @@ const CareerManagement = () => {
               name="type"
               className="w-full border p-2 rounded mb-3"
               value={formData.type}
-              onChange={handleChange}
-            >
+              onChange={handleChange}>
               <option value="Full-Time">Full-Time</option>
               <option value="Part-Time">Part-Time</option>
               <option value="Internship">Internship</option>
@@ -252,8 +238,8 @@ const CareerManagement = () => {
               name="status"
               className="w-full border p-2 rounded mb-3"
               value={formData.status}
-              onChange={handleChange}
-            >
+              onChange={handleChange}>
+              
               <option value="Closed">Closed</option>
               <option value="Apply Now">Apply Now</option>
             </select>
@@ -265,16 +251,12 @@ const CareerManagement = () => {
                   setShowForm(false);
                   setEditId(null);
                 }}
-                className="px-4 py-2 bg-gray-400 text-white rounded-lg"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-              >
+                className="px-4 py-2 bg-gray-400 text-white rounded-lg">Cancel</button>
+              
+              <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
                 {editId ? "Update" : "Add"}
               </button>
+              
             </div>
           </form>
         </div>
