@@ -65,8 +65,8 @@ const Navbar = () => {
           </nav>
 
           {/* Desktop Button */}
-          <div className="hidden md:block">
-            <button onClick={() => navigate("/contact")} className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5">
+          <div className="hidden md:block" onClick={() => navigate("/contact")}>
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5">
               Get Started
             </button>
           </div>

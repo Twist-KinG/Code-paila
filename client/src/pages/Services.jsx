@@ -8,8 +8,12 @@ import {
   FaUserShield,
   FaReact,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  
+  const navigate = useNavigate();
+
   const services = [
     {
       icon: FaGlobe,
@@ -157,12 +161,12 @@ const Services = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center mt-12 sm:mt-16">
+        <div onClick={() => navigate("/contact")} className="text-center mt-12 sm:mt-16">
           <button
             aria-label="Start a project with us"
             className="group bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg shadow-md hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden"
           >
-            <span className="relative z-10">
+            <span className="relative z-10" >
               Let's Create Something Amazing
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-teal-400 opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500"></div>
