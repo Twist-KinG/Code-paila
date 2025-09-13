@@ -53,7 +53,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex justify-center items-center relative z-10">
+      <div className="max-w-screen flex justify-center items-center relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <motion.div
@@ -150,7 +150,7 @@ const Hero = () => {
               <img
                 src={heroImage}
                 alt="Hero section illustration of IT team"
-                className="w-full h-[400px] lg:h-[600px] rounded-3xl object-cover shadow-2xl transform group-hover:scale-[1.02] transition-all duration-500"
+                className="relative rounded-2xl sm:rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:-translate-y-2 w-full object-cover"
               />
 
               {/* Floating Cards */}

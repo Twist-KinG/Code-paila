@@ -19,8 +19,8 @@ const Careers = () => {
     }, []);
 
     return (
-        <section className="py-24 bg-gray-50 relative">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden mt-5">
+            <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">

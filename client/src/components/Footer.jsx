@@ -52,7 +52,7 @@ const Footer = () => {
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-teal-500/10 rounded-full animate-pulse animation-delay-4000"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
           {/* Company Info */}
           <div className="space-y-8">
