@@ -117,8 +117,7 @@ const Profile = () => {
             ) : (
                 
               <form
-                onSubmit={handleSubmit}
-                  className="flex flex-col gap-2 mt-2 text-gray-700">
+                onSubmit={handleSubmit} className="flex flex-col gap-2 mt-2 text-gray-700">
                   
                 <input
                   type="text"
