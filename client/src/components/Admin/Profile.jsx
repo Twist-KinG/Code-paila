@@ -166,7 +166,6 @@ const Profile = () => {
                     
                   <button type="button" onClick={() => setEditMode(false)}
                       className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition">Cancel</button>
-                    
                 </div>
               </form>
             )}
