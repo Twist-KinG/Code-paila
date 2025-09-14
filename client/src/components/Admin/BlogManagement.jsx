@@ -3,7 +3,7 @@ import React from 'react'
 const BlogManagement = () => {
   return (
     <div>
-      blog management
+      blog management to post
     </div>
   )
 }
