@@ -11,7 +11,7 @@ const contactInfo = [
   {
     icon: FiPhone,
     title: 'Let\'s Talk',
-    details: ['+977-9761734597', ],
+    details: ['+977-9761734597',],
     color: 'from-green-500 to-teal-500'
   },
   {
@@ -54,7 +54,7 @@ const reasons = [
 const Contact = () => {
   return (
 
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden mt-5">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-64 h-64 bg-blue-300/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -77,51 +77,55 @@ const Contact = () => {
         </div>
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-8">
-                Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Touch</span>
-              </h3>
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="group flex items-start space-x-4 p-4 rounded-2xl hover:bg-white/50 transition-all duration-300">
-                    <div className={`w-14 h-14 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
-                      <info.icon className="h-7 w-7 text-white" />
+          <div className="max-w-xl mx-auto relative bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-2xl border border-white/50">
+            <div className="space-y-8">
+              <div>
+                <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-20 animate-pulse animation-delay-2000"></div>
+                <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full opacity-20 animate-pulse"></div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8">
+                  Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Touch</span>
+                </h3>
+                <div className="space-y-6">
+                  {contactInfo.map((info, index) => (
+                    <div key={index} className="group flex items-start space-x-4 p-4 rounded-2xl hover:bg-white/50 transition-all duration-300">
+                      <div className={`w-14 h-14 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
+                        <info.icon className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 mb-2 text-lg">
+                          {info.title}
+                        </h4>
+                        {info.details.map((detail, detailIndex) => (
+                          <p key={detailIndex} className="text-gray-600 leading-relaxed">
+                            {detail}
+                          </p>
+                        ))}
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-2 text-lg">
-                        {info.title}
-                      </h4>
-                      {info.details.map((detail, detailIndex) => (
-                        <p key={detailIndex} className="text-gray-600 leading-relaxed">
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Why Choose Us */}
-            <div className="relative bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50">
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
-              <h4 className="font-bold text-gray-900 mb-6 text-xl">
-                Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">CodePaila</span>?
-              </h4>
-              <ul className="space-y-4">
-                {reasons.map((reason, index) => (
-                  <li key={index} className="flex items-center space-x-3 group">
-                    <reason.icon className={`h-5 w-5 ${reason.color} group-hover:scale-110 transition-transform duration-300`} />
-                    <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">{reason.text}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Why Choose Us */}
+              <div className="relative bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50">
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
+                <h4 className="font-bold text-gray-900 mb-6 text-xl">
+                  Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">CodePaila</span>?
+                </h4>
+                <ul className="space-y-4">
+                  {reasons.map((reason, index) => (
+                    <li key={index} className="flex items-center space-x-3 group">
+                      <reason.icon className={`h-5 w-5 ${reason.color} group-hover:scale-110 transition-transform duration-300`} />
+                      <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">{reason.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
           {/* Contact Form */}
           <div className="max-w-xl mx-auto relative bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-2xl border border-white/50">
-          <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-20 animate-pulse"></div>
+            <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-20 animate-pulse"></div>
             <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full opacity-20 animate-pulse animation-delay-2000"></div>
             <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Let's Start Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Amazing</span>
