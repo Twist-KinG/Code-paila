@@ -1,10 +1,5 @@
 import express from "express";
-import {
-    getCareers,
-    addCareer,
-    updateCareer,
-    deleteCareer,
-} from "../controllers/careerController.js";
+import { getCareers,  addCareer, updateCareer, deleteCareer, } from "../controllers/careerController.js";
 import { protect } from "../middleware/AuthMiddleware.js";
 
 const router = express.Router();

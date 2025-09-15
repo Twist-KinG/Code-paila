@@ -7,9 +7,9 @@ const router = express.Router();
 // Admin routes (protected)
 router.use(protect);
 
-router.get("/admin", getAdminBlogs);
-router.post("/admin", addBlog);
-router.put("/admin/:id", updateBlog);
-router.delete("/admin/:id", deleteBlog);
+router.get("/", getAdminBlogs);
+router.post("/", addBlog);
+router.put("/:id", updateBlog);
+router.delete("/:id", deleteBlog);
 
 export default router;
