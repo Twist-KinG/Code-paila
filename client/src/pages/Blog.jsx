@@ -81,7 +81,6 @@ const Blog = () => {
                 <FaUser className="text-gray-900" />
                 <div>
                   <p className="font-medium text-gray-900">{blog.author}</p>
-                  {blog.role && <p className="text-sm text-gray-600">{blog.role}</p>}
                 </div>
               </div>
             </div>
