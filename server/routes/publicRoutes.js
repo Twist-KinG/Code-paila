@@ -1,5 +1,6 @@
 import express from "express";
 import { getPublicCareers } from "../controllers/careerController.js";
+import { getPublicBlogs } from "../controllers/blogController.js";
 
 const router = express.Router();
 
