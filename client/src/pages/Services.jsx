@@ -71,19 +71,20 @@ const Services = () => {
   ];
 
   return (
-    <section
-      id="services"
-      className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden mt-5"
-    >
+    <section id="services" className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden mt-5">
+
       <div className="max-w-screen mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
+
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-6 py-3 rounded-full mb-6">
+
             <FaReact className="h-5 w-5 text-purple-500" />
             <span className="text-gray-700 font-medium text-sm sm:text-base">
               What We Create
             </span>
           </div>
+          
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Our{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600">
@@ -98,27 +99,20 @@ const Services = () => {
         </div>
 
         {/* Service Cards */}
-        <div
-          role="list"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-        >
+        <div role="list" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
           {services.map((service, index) => (
-            <div
-              role="listitem"
-              key={index}
-              className="group relative bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-transform duration-500 hover:-translate-y-3 hover:rotate-1 border border-white/50"
-              style={{ animationDelay: `${service.delay}ms` }}
-            >
+            <div role="listitem" key={index} className="group relative bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-transform duration-500 hover:-translate-y-3 hover:rotate-1 border border-white/50"
+              style={{ animationDelay: `${service.delay}ms` }}>
               {/* Gradient Hover Effect */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-              ></div>
+                className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`}>
+              </div>
 
               {/* Icon */}
               <div className="relative mb-6 sm:mb-8">
                 <div
-                  className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${service.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}
-                >
+                  className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${service.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
                   <service.icon className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
                 </div>
 
@@ -137,17 +131,18 @@ const Services = () => {
               {/* Technologies */}
               <div className="space-y-2 sm:space-y-3">
                 <h4 className="font-bold text-gray-900 text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2">
-                  <div
-                    className={`w-2 h-2 bg-gradient-to-r ${service.color} rounded-full`}
-                  ></div>
+
+                  <div className={`w-2 h-2 bg-gradient-to-r ${service.color} rounded-full`}></div>
+
                   <span>Technologies</span>
                 </h4>
+
                 <div className="flex flex-wrap gap-2">
+
                   {service.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className={`bg-gradient-to-r ${service.color} text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300`}
-                    >
+                      className={`bg-gradient-to-r ${service.color} text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300`}>
                       {tech}
                     </span>
                   ))}
@@ -164,8 +159,7 @@ const Services = () => {
         <div onClick={() => navigate("/contact")} className="text-center mt-12 sm:mt-16">
           <button
             aria-label="Start a project with us"
-            className="group bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg shadow-md hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden"
-          >
+            className="group bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg shadow-md hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 relative overflow-hidden">
             <span className="relative z-10" >
               Let's Create Something Amazing
             </span>
