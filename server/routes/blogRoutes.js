@@ -5,9 +5,11 @@ import { protect } from "../middleware/AuthMiddleware.js";
 const router = express.Router();
 
 // Admin routes (protected)
-router.get("/admin", protect, getAdminBlogs);
-router.post("/admin", protect, addBlog);
-router.put("/admin/:id", protect, updateBlog);
-router.delete("/admin/:id", protect, deleteBlog);
+router.use(protect);
+
+router.get("/admin", getAdminBlogs);
+router.post("/admin", addBlog);
+router.put("/admin/:id", updateBlog);
+router.delete("/admin/:id", deleteBlog);
 
 export default router;
