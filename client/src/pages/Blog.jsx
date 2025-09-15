@@ -71,7 +71,7 @@ const Blog = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-6 py-3 rounded-full mb-6">
             <FaStar className="h-5 w-5 text-yellow-500" />
-            <span className="text-gray-700 font-medium">Our Projects</span>
+            <span className="text-gray-700 font-medium">Our Blogs</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our{" "}
