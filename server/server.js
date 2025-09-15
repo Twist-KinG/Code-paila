@@ -17,9 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 //publically avaiable routes
-app.use("/api/careers", publicRoutes);
-app.use("/api/blog", publicRoutes);
-
+app.use("/api", publicRoutes);
 
 
 // admin Routes

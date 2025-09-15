@@ -5,7 +5,7 @@ import { getPublicBlogs } from "../controllers/blogController.js";
 const router = express.Router();
 
 // Public routes
-router.get("/", getPublicCareers);
-router.get("/", getPublicBlogs);
+router.get("/careers", getPublicCareers);
+router.get("/blogs", getPublicBlogs);
 
 export default router;

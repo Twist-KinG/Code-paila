@@ -47,7 +47,7 @@ const BlogManagement = () => {
     try {
       const url = editId
         ? `http://localhost:5000/api/admin/blog/${editId}`
-        : "http://localhost:5000/api/admin/admin";
+        : "http://localhost:5000/api/admin/blog";
       const method = editId ? "PUT" : "POST";
 
       const res = await fetch(url, {
