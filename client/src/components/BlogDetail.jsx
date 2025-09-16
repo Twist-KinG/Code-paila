@@ -37,8 +37,7 @@ const BlogDetail = () => {
       <div className="sm:hidden mb-6">
         <button
           onClick={() => navigate("/blogs")}
-          className="flex items-center gap-2 text-blue-600 font-medium"
-        >
+          className="flex items-center gap-2 text-blue-600 font-medium">
           <FaArrowLeft />
           Back to Blogs
         </button>
@@ -95,7 +94,7 @@ const BlogDetail = () => {
       </div>
 
     </section>
-    
+
   );
 };
 
