@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
+  const navigate = useNavigate();
 
-  // Fetch blogs from backend
+  // Fetch blogs
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/blogs"); // match your public route
+        const res = await fetch("http://localhost:5000/api/blogs");
         const data = await res.json();
         setBlogs(data);
       } catch (err) {
         console.error("Failed to fetch blogs:", err);
       }
     };
-
     fetchBlogs();
   }, []);
 
+  const handleNavigate = (blog) => {
+    navigate(`/blogs/${blog._id}`, { state: { blog } });
+  };
+
   return (
-    <section
-      id="blog"
-      className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-gray-50 relative overflow-hidden mt-5"
-    >
+    <section className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-gray-50 relative overflow-hidden mt-5">
+      {/* Section Header */}
       <div className="max-w-screen-xl mx-auto text-center mb-14">
         <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-6 py-3 rounded-full mb-6">
           <FaUser className="h-5 w-5 text-yellow-500" />
@@ -41,11 +43,13 @@ const Blog = () => {
         </p>
       </div>
 
+      {/* Blog Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogs.map((blog) => (
           <div
             key={blog._id}
-            className="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            onClick={() => handleNavigate(blog)}
+            className="cursor-pointer group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
           >
             {/* Blog Image */}
             {blog.image && (
@@ -55,10 +59,7 @@ const Blog = () => {
                   alt={blog.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                {/* Gradient Overlay on Hover */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-50 transition-all duration-500`}
-                ></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
               </div>
             )}
 
@@ -66,27 +67,20 @@ const Blog = () => {
             <div className="p-6 relative z-10">
               <div className="flex items-center gap-3 text-sm text-gray-900 mb-3">
                 <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
-                {blog.tags && blog.tags.length > 0 && (
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">
-                    {blog.tags[0]}
-                  </span>
+                {blog.tags?.length > 0 && (
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">{blog.tags[0]}</span>
                 )}
               </div>
               <h3 className="text-xl font-semibold mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
                 {blog.title}
               </h3>
               <p className="text-gray-900 mb-4">{blog.summary}</p>
-
-              {/* Author */}
               <div className="flex items-center gap-3">
                 <FaUser className="text-gray-900" />
-                <div>
-                  <p className="font-medium text-gray-900">{blog.author}</p>
-                </div>
+                <p className="font-medium text-gray-900">{blog.author || "Unknown Author"}</p>
               </div>
             </div>
 
-            {/* Subtle Glow on Hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
           </div>
         ))}

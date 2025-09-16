@@ -12,6 +12,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
+import BlogDetail from "./components/BlogDetail";
 
 // admin login interfaces
 import AdminLogin from "./components/Admin/AdminLogin";
@@ -49,6 +50,8 @@ function App() {
           <Route path="/contact" element={<Layout><Contact /></Layout>} />
           <Route path="/careers" element={<Layout><Careers /></Layout>} />
           <Route path="/blogs" element={<Layout><Blog /></Layout>} />
+          <Route path="/blogs/:id" element={<Layout><BlogDetail /></Layout>} />
+
 
           {/* Admin Login */}
           <Route path="/adminlogin" element={<AdminLogin />} />

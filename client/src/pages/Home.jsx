@@ -16,7 +16,6 @@ const Home = () => {
       <Blog />
       <Team />
     </section>
-
   );
 };
 
