@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -93,9 +94,11 @@ const Blog = () => {
 
       {/* Explore Button */}
       <div className="text-center mt-20">
-        <button className="group bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:-translate-y-1 hover:scale-105">
-          <span className="group-hover:animate-pulse">Explore All Blogs</span>
-        </button>
+        <Link to="/blogs">
+          <button className="group bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:-translate-y-1 hover:scale-105">
+            <span className="group-hover:animate-pulse">Explore All Blogs</span>
+          </button>
+        </Link>
       </div>
     </section>
   );
