@@ -37,8 +37,7 @@ const BlogDetail = () => {
       <div className="sm:hidden mb-6">
         <button
           onClick={() => navigate("/blogs")}
-          className="flex items-center gap-2 text-blue-600 font-medium"
-        >
+          className="flex items-center gap-2 text-blue-600 font-medium">
           <FaArrowLeft />
           Back to Blogs
         </button>
@@ -71,21 +70,31 @@ const BlogDetail = () => {
           />
         )}
         <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
+
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-gray-600 mb-6">
+
           <div className="flex items-center gap-2">
             <FaUser className="text-gray-900" />
             <span>{blog.author || "Unknown Author"}</span>
           </div>
+
           <div>{new Date(blog.createdAt).toLocaleDateString()}</div>
+
         </div>
+
         <p className="text-gray-700 text-lg leading-relaxed mb-6">{blog.summary}</p>
+
         {blog.content && (
           <div className="mt-6 text-gray-800 prose prose-lg">
             <div dangerouslySetInnerHTML={{ __html: blog.content }} />
           </div>
+
         )}
+
       </div>
+
     </section>
+
   );
 };
 
