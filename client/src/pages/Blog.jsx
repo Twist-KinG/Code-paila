@@ -46,19 +46,20 @@ const Blog = () => {
       {/* Blog Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogs.map((blog) => (
+          
           <div
             key={blog._id}
             onClick={() => handleNavigate(blog)}
-            className="cursor-pointer group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-          >
+            className="cursor-pointer group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
             {/* Blog Image */}
             {blog.image && (
               <div className="relative h-56 overflow-hidden">
+
                 <img
                   src={blog.image}
                   alt={blog.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
               </div>
             )}
