@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);

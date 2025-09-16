@@ -62,12 +62,12 @@ const BlogDetail = () => {
       </div>
 
       {/* Blog Content */}
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-xl mx-auto bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-2xl border border-white/50">
         {blog.image && (
           <img
             src={blog.image}
             alt={blog.title}
-            className="w-full h-80 sm:h-96 object-cover rounded-2xl mb-8"
+            className="w-full h-80 sm:h-150 object-cover rounded-2xl mb-8"
           />
         )}
         <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
