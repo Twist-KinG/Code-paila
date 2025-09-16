@@ -11,6 +11,17 @@ export const getPublicBlogs = async (req, res) => {
     }
 };
 
+// get blogs by ID
+export const getBlogById = async (req, res) => {
+    try {
+        const blog = await Blog.findById(req.params.id);
+        if (!blog) return res.status(404).json({ message: "Blog not found" });
+        res.status(200).json(blog);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
 // Admin blogs
 export const getAdminBlogs = async (req, res) => {
     try {
