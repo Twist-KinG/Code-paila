@@ -163,7 +163,7 @@ const Footer = () => {
                   <HiPhone className="h-5 w-5 text-white" />
                 </div>
                 <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                  +977-1-4441234
+                  +977-9761734597
                 </p>
               </div>
 
@@ -172,7 +172,7 @@ const Footer = () => {
                   <HiMail className="h-5 w-5 text-white" />
                 </div>
                 <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                  hello@CodePaila.com
+                  infocodepaila@gmail.com
                 </p>
               </div>
             </div>
