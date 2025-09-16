@@ -37,8 +37,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden mt-5"
-    >
+      className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden mt-5">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -76,15 +75,18 @@ const About = () => {
           {/* Left Image */}
           <div className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 blur-lg"></div>
+           
             <img
               src={Img}
               alt="Modern Office in Nepal"
               className="relative rounded-2xl sm:rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:-translate-y-2 w-full object-cover"
             />
+
           </div>
 
           {/* Right Content */}
           <div className="space-y-6 sm:space-y-8">
+
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
               Where{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
@@ -95,12 +97,14 @@ const About = () => {
                 Tradition
               </span>
             </h3>
+
             <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
               Born in the shadow of the mighty Himalayas, CodePaila represents a
               new generation of software artisans. We blend the timeless wisdom
               of our ancient culture with cutting-edge technology to create
               solutions that don't just work – they inspire.
             </p>
+
             <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
               Our mission transcends code and pixels. We're here to showcase that
               extraordinary innovation knows no boundaries, and that the next
@@ -131,20 +135,21 @@ const About = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
-            >
+              className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+             
               <div
-                className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br ${feature.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}
-              >
+                className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br ${feature.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
                 <feature.icon className="h-7 w-7 sm:h-8 sm:w-8 text-white" />
               </div>
 
               <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
                 {feature.title}
               </h4>
+
               <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                 {feature.description}
               </p>
+              
             </div>
           ))}
         </div>
