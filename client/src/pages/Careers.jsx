@@ -40,10 +40,8 @@ const Careers = () => {
                         </p>
                     ) : (
                         jobOpenings.map((job) => (
-                            <div
-                                key={job._id}
-                                className="bg-white rounded-3xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border border-gray-200"
-                            >
+                            <div key={job._id}
+                                className="bg-white rounded-3xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border border-gray-200">
                                 <h3 className="text-2xl font-semibold text-gray-900 mb-2">
                                     {job.title}
                                 </h3>
