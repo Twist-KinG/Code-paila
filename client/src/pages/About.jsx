@@ -76,11 +76,7 @@ const About = () => {
           <div className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 blur-lg"></div>
            
-            <img
-              src={Img}
-              alt="Modern Office in Nepal"
-              className="relative rounded-2xl sm:rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:-translate-y-2 w-full object-cover"
-            />
+            <img src={Img} alt="Modern Office in Nepal" className="relative rounded-2xl sm:rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:-translate-y-2 w-full object-cover"/>
 
           </div>
 
