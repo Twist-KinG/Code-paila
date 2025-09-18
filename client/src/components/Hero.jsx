@@ -140,36 +140,22 @@ const Hero = () => {
           </motion.div>
 
           {/* Right Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="relative"
-          >
+          <motion.div initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="relative">
+            
             <div className="relative group">
-              <img
-                src={heroImage}
-                alt="Hero section illustration of IT team"
-                className="relative rounded-2xl sm:rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:-translate-y-2 w-full object-cover"
-              />
+              <img src={heroImage} alt="Hero section illustration of IT team" className="relative rounded-2xl sm:rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:-translate-y-2 w-full object-cover"/>
 
               {/* Floating Cards */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg flex items-center space-x-2 border border-gradient-to-r from-blue-400 to-purple-400"
-              >
+              <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg flex items-center space-x-2 border border-gradient-to-r from-blue-400 to-purple-400">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            
                 <span className="text-sm font-medium text-gray-800">
                   Live Projects: 12
                 </span>
+            
               </motion.div>
 
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg flex items-center space-x-2 border border-gradient-to-r from-yellow-400 to-orange-500"
-              >
+              <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg flex items-center space-x-2 border border-gradient-to-r from-yellow-400 to-orange-500" >
                 <FaStar className="h-4 w-4 text-yellow-500" />
                 <span className="text-sm font-medium text-gray-800">
                   4.9 Rating
