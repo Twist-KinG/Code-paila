@@ -35,12 +35,12 @@ const BlogDetail = () => {
     <section className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-gray-50 mt-5">
       {/* Mobile Back Button */}
       <div className="sm:hidden mb-6">
-        <button
-          onClick={() => navigate("/blogs")}
-          className="flex items-center gap-2 text-blue-600 font-medium">
+
+        <button onClick={() => navigate("/blogs")} className="flex items-center gap-2 text-blue-600 font-medium">
           <FaArrowLeft />
           Back to Blogs
         </button>
+
       </div>
 
       {/* Header Section */}
@@ -63,11 +63,8 @@ const BlogDetail = () => {
       {/* Blog Content */}
       <div className="max-w-screen-xl mx-auto bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-2xl border border-white/50">
         {blog.image && (
-          <img
-            src={blog.image}
-            alt={blog.title}
-            className="w-full h-80 sm:h-150 object-cover rounded-2xl mb-8"
-          />
+          <img src={blog.image} alt={blog.title} className="w-full h-80 sm:h-150 object-cover rounded-2xl mb-8" />
+
         )}
         <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
 
@@ -85,6 +82,7 @@ const BlogDetail = () => {
         <p className="text-gray-700 text-lg leading-relaxed mb-6">{blog.summary}</p>
 
         {blog.content && (
+          
           <div className="mt-6 text-gray-800 prose prose-lg">
             <div dangerouslySetInnerHTML={{ __html: blog.content }} />
           </div>
