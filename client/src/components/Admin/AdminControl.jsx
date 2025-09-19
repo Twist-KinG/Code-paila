@@ -124,41 +124,18 @@ const AdminControl = () => {
                             Add New Admin
                         </h3>
                         
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Name"
-                            className="w-full border p-2 rounded mb-3"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
+                        <input type="text" name="name" placeholder="Name" className="w-full border p-2 rounded mb-3"value={formData.name} onChange={handleChange} required/>
 
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            className="w-full border p-2 rounded mb-3"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
+                        <input type="email" name="email" placeholder="Email" className="w-full border p-2 rounded mb-3" value={formData.email} onChange={handleChange} required />
 
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            className="w-full border p-2 rounded mb-3"
-                            value={formData.password}
-                            onChange={handleChange}
-                            required
-                        />
+                        <input type="password" name="password" placeholder="Password" className="w-full border p-2 rounded mb-3" value={formData.password} onChange={handleChange} required />
 
                         <select name="role" className="w-full border p-2 rounded mb-3" value={formData.role} onChange={handleChange}>
                             
                             <option value="SuperAdmin">Super Admin</option>
                             <option value="Admin">Admin</option>
                             <option value="General">General</option>
+                            
                         </select>
 
                         <div className="flex justify-end gap-2 flex-wrap">
