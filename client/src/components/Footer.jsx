@@ -57,14 +57,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-8">
             <div className="flex items-center space-x-2 cursor-pointer">
-              <img
-                src={Logo}
-                alt="CodePaila Logo"
-                className="h-20 w-auto transition-transform duration-300 hover:scale-105"
-              />
+              <img src={Logo} alt="CodePaila Logo" className="h-20 w-auto transition-transform duration-300 hover:scale-105" />
+              
               <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-teal-500 bg-clip-text text-transparent">
                 CodePaila
               </span>
+
             </div>
 
             <p className="text-gray-300 leading-relaxed text-lg">
@@ -80,11 +78,7 @@ const Footer = () => {
 
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <button
-                  key={index}
-                  className={`group bg-gray-800/50 backdrop-blur-sm p-4 rounded-2xl ${social.color} transition-all duration-300 transform hover:scale-110 hover:shadow-lg border border-gray-700/50`}
-                  aria-label={social.label}
-                >
+                <button key={index} className={`group bg-gray-800/50 backdrop-blur-sm p-4 rounded-2xl ${social.color} transition-all duration-300 transform hover:scale-110 hover:shadow-lg border border-gray-700/50`} aria-label={social.label}>
                   <social.icon className="h-6 w-6 group-hover:animate-pulse" />
                 </button>
               ))}
@@ -100,10 +94,9 @@ const Footer = () => {
             <ul className="space-y-4">
               {services.map((item, index) => (
                 <li key={index}>
-                  <Link
-                    to={item.path}
-                    className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-2 group"
-                  >
+
+                  <Link to={item.path} className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-2 group">
+                    
                     <div className="w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <span className="group-hover:translate-x-2 transition-transform duration-300">
                       {item.name}
@@ -123,10 +116,9 @@ const Footer = () => {
             <ul className="space-y-4">
               {company.map((item, index) => (
                 <li key={index}>
-                  <Link
-                    to={item.path}
-                    className="text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-2 group"
-                  >
+
+                  <Link to={item.path} className="text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-2 group">
+                    
                     <div className="w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <span className="group-hover:translate-x-2 transition-transform duration-300">
                       {item.name}
@@ -192,19 +184,13 @@ const Footer = () => {
             </p>
             <div className="flex space-x-8 text-sm">
               {/* Privacy Policy */}
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group"
-              >
+              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group">
                 Privacy Policy
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
               </a>
 
               {/* {Terms of Service} */}
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group"
-              >
+              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group">
                 Terms of Service
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
               </a>
