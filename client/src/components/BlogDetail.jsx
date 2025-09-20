@@ -84,7 +84,9 @@ const BlogDetail = () => {
         {blog.content && (
           
           <div className="mt-6 text-gray-800 prose prose-lg">
+
             <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+            
           </div>
 
         )}
