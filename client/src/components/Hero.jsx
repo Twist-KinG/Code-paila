@@ -160,7 +160,9 @@ const Hero = () => {
                 <span className="text-sm font-medium text-gray-800">
                   4.9 Rating
                 </span>
+
               </motion.div>
+              
             </div>
           </motion.div>
         </div>
