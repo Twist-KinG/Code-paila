@@ -61,33 +61,43 @@ const Blog = () => {
 
             {/* Blog Content */}
             <div className="p-6 relative z-10">
+              
               <div className="flex items-center gap-3 text-sm text-gray-900 mb-3">
                 <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
                 {blog.tags?.length > 0 && (
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">{blog.tags[0]}</span>
                 )}
               </div>
+
               <h3 className="text-xl font-semibold mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
                 {blog.title}
               </h3>
+
               <p className="text-gray-900 mb-4">{blog.summary}</p>
+
               <div className="flex items-center gap-3">
                 <FaUser className="text-gray-900" />
                 <p className="font-medium text-gray-900">{blog.author || "Unknown Author"}</p>
               </div>
+
             </div>
 
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
+         
           </div>
+
         ))}
       </div>
 
       {/* Explore Button */}
       <div className="text-center mt-20">
+
         <button className="group bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:-translate-y-1 hover:scale-105">
           <span className="group-hover:animate-pulse">Explore All Blogs</span>
         </button>
+
       </div>
+      
     </section>
   );
 };
