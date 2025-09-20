@@ -78,8 +78,7 @@ const AdminControl = () => {
                 
                 <h2 className="text-3xl font-bold text-gray-900">Admin Control</h2>
                 
-                <button onClick={() => setShowForm(true)}
-                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">+ Add Admin</button>
+                <button onClick={() => setShowForm(true)} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">+ Add Admin</button>
             </div>
 
             <p className="text-gray-700 mb-6">
@@ -94,12 +93,10 @@ const AdminControl = () => {
                     <div key={adm._id} className="bg-white p-4 rounded-xl shadow-md text-center transform hover:-translate-y-1 transition-all">
                         {/* Profile Photo or Icon */}
                         <div className="w-14 h-14 mx-auto mb-3 rounded-full overflow-hidden border-2 border-purple-600 flex items-center justify-center bg-gray-200">
+                            
                             {adm.profileImage ? (
-                                <img
-                                    src={adm.profileImage}
-                                    alt={adm.name}
-                                    className="w-full h-full object-cover"
-                                />
+
+                                <img src={adm.profileImage} alt={adm.name} className="w-full h-full object-cover"/>
                             ) : (
                                 <FaUser className="w-6 h-6 text-purple-600" />
                             )}
