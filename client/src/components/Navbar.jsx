@@ -78,6 +78,7 @@ const Navbar = () => {
                 <HiMenu className="h-6 w-6 transition-transform duration-200" />
             )}
           </button>
+          
         </div>
 
         {/* Mobile Menu */}
@@ -87,7 +88,7 @@ const Navbar = () => {
             <div className="px-4 py-6 space-y-4">
             
               {navItems.map((item) => (
-                
+
                 <Link key={item.name} to={item.path} className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-medium hover:bg-blue-50 rounded-lg transition-all duration-300 ease-in-out hover:translate-x-1" onClick={() => setIsMenuOpen(false)}>
                   {item.name}
                 </Link>
