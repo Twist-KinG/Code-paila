@@ -58,14 +58,8 @@ function App() {
           <Route path="/adminsignup" element={<AdminSignup />} />
 
           {/* Protected Admin Section */}
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <AdminLayout />
-              </ProtectedRoute>
-            }
-          >
+          <Route path="/admin" element={ <ProtectedRoute>  <AdminLayout />  </ProtectedRoute> }>
+            
             {/* Default route -> AdminSummary */}
             <Route index element={<AdminSummary />} />
 
