@@ -63,10 +63,8 @@ const Portfolio = () => {
   ];
 
   return (
-    <section
-      id="portfolio"
-      className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden mt-5"
-    >
+    <section id="portfolio" className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden mt-5">
+      
       <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
@@ -74,12 +72,14 @@ const Portfolio = () => {
             <FaStar className="h-5 w-5 text-yellow-500" />
             <span className="text-gray-700 font-medium">Our Projects</span>
           </div>
+          
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600">
               Portfolio
             </span>
           </h2>
+          
           <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Each project tells a story of innovation, dedication, and the
             relentless pursuit of excellence.
@@ -89,20 +89,13 @@ const Portfolio = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border border-gray-100"
-            >
+            <div key={index} className="group relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border border-gray-100">
               {/* Project Image */}
               <div className="relative overflow-hidden h-64">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-80 transition-all duration-500`}
-                ></div>
+                
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-80 transition-all duration-500`}></div>
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
@@ -113,16 +106,10 @@ const Portfolio = () => {
 
                 {/* Action Buttons */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 space-x-4">
-                  <button
-                    aria-label="View Project"
-                    className="bg-white text-gray-800 p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110"
-                  >
+                  <button aria-label="View Project" className="bg-white text-gray-800 p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110">
                     <FaExternalLinkAlt className="h-6 w-6" />
                   </button>
-                  <button
-                    aria-label="View Source Code"
-                    className="bg-white text-gray-800 p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110"
-                  >
+                  <button aria-label="View Source Code" className="bg-white text-gray-800 p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110">
                     <FaGithub className="h-6 w-6" />
                   </button>
                 </div>
