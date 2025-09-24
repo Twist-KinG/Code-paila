@@ -54,6 +54,7 @@ const Careers = () => {
                                     {job.type}</span>
                                 
                                     <p className="text-gray-600 mb-6">{job.description}</p>
+                                    
                                 <button className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${job.status === "Closed"
                                             ? "bg-gray-300 text-gray-700 cursor-not-allowed"
                                             : "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg"
@@ -75,13 +76,17 @@ const Careers = () => {
                     <h3 className="text-3xl font-bold text-gray-900 mb-4">
                         Can't find your role?
                     </h3>
+
                     <p className="text-gray-600 mb-6">
                         We’re always looking for talented individuals. Send us your resume and we might reach out!
                     </p>
+
                     <button className="bg-gradient-to-r from-teal-500 to-green-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                         Closed for now
                     </button>
+
                 </div>
+
             </div>
         </section>
     );
