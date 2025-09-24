@@ -28,35 +28,41 @@ const Blog = () => {
     <section className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-gray-50 relative overflow-hidden mt-5">
       {/* Section Header */}
       <div className="max-w-screen-xl mx-auto text-center mb-14">
+
         <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-6 py-3 rounded-full mb-6">
           <FaUser className="h-5 w-5 text-yellow-500" />
           <span className="text-gray-700 font-medium">Our Blogs</span>
         </div>
+
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Latest{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600">
             Blogs
           </span>
         </h2>
+
         <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
           Explore our expert advice and stories from the field of innovation, technology, and business.
         </p>
+
       </div>
 
       {/* Blog Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
         {blogs.map((blog) => (
-          <div
-            key={blog._id}
-            onClick={() => handleNavigate(blog)}
+
+          <div key={blog._id} onClick={() => handleNavigate(blog)}
             className="cursor-pointer group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
             {/* Blog Image */}
+
             {blog.image && (
+
               <div className="relative h-56 overflow-hidden">
                 <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
               </div>
+              
             )}
 
             {/* Blog Content */}
