@@ -1,7 +1,7 @@
 import React from "react";
 import { FaExternalLinkAlt, FaGithub, FaStar } from "react-icons/fa";
 import { HiTrendingUp } from "react-icons/hi";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const projects = [
@@ -16,6 +16,7 @@ const Portfolio = () => {
       stats: { users: "50K+", rating: "4.9", growth: "+150%" },
       color: "from-blue-500 to-cyan-500",
     },
+
     {
       title: "Laboratory Information System",
       description:
@@ -27,6 +28,7 @@ const Portfolio = () => {
       stats: { users: "25K+", rating: "4.8", growth: "+200%" },
       color: "from-green-500 to-teal-500",
     },
+
     {
       title: "EduNepal Learning",
       description:
@@ -38,6 +40,7 @@ const Portfolio = () => {
       stats: { users: "100K+", rating: "4.7", growth: "+300%" },
       color: "from-orange-500 to-red-500",
     },
+
     {
       title: "Himalayan Adventures",
       description:
@@ -49,6 +52,7 @@ const Portfolio = () => {
       stats: { users: "75K+", rating: "4.8", growth: "+250%" },
       color: "from-teal-500 to-blue-500",
     },
+
     {
       title: "LogiTrack Pro",
       description:
@@ -60,11 +64,12 @@ const Portfolio = () => {
       stats: { users: "30K+", rating: "4.9", growth: "+220%" },
       color: "from-indigo-500 to-purple-500",
     },
+
   ];
 
   return (
     <section id="portfolio" className="px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden mt-5">
-      
+
       <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
@@ -72,14 +77,14 @@ const Portfolio = () => {
             <FaStar className="h-5 w-5 text-yellow-500" />
             <span className="text-gray-700 font-medium">Our Projects</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600">
               Portfolio
             </span>
           </h2>
-          
+
           <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Each project tells a story of innovation, dedication, and the
             relentless pursuit of excellence.
@@ -92,9 +97,9 @@ const Portfolio = () => {
             <div key={index} className="group relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border border-gray-100">
               {/* Project Image */}
               <div className="relative overflow-hidden h-64">
-                
+
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                
+
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-80 transition-all duration-500`}></div>
 
                 {/* Category Badge */}
@@ -152,7 +157,7 @@ const Portfolio = () => {
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
 
-                    <span  key={techIndex}  className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200">
+                    <span key={techIndex} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200">
                       {tech}
                     </span>
                   ))}
