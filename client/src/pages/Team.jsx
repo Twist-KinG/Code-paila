@@ -3,9 +3,6 @@ import { FaLinkedin, FaTwitter, FaGithub, FaCoffee } from "react-icons/fa";
 import { HiOutlineBadgeCheck, HiOutlineHeart } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
-// Example: import images properly instead of ./src/assets
-// import rajeshImg from "../assets/img/rajesh.jpg";
-
 const Team = () => {
   const navigate = useNavigate();
 
@@ -90,11 +87,10 @@ const Team = () => {
 
         {/* Team Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
           {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-700 hover:-translate-y-6 border border-white/50"
-            >
+
+            <div key={index} className="group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-700 hover:-translate-y-6 border border-white/50">
               {/* Background Gradient */}
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${member.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
@@ -102,11 +98,8 @@ const Team = () => {
 
               {/* Image */}
               <div className="relative overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-[400px] md:h-[480px] object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+
+                <img src={member.image} alt={member.name} className="w-full h-[400px] md:h-[480px] object-cover group-hover:scale-110 transition-transform duration-700"/>
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -119,24 +112,19 @@ const Team = () => {
                 {/* Socials */}
                 <div className="absolute bottom-4 left-4 right-4 transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                   <div className="flex justify-center space-x-4">
-                    <button
-                      aria-label="LinkedIn"
-                      className="bg-white/90 text-gray-800 p-3 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg"
-                    >
+
+                    <button aria-label="LinkedIn" className="bg-white/90 text-gray-800 p-3 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
                       <FaLinkedin className="h-5 w-5" />
                     </button>
-                    <button
-                      aria-label="Twitter"
-                      className="bg-white/90 text-gray-800 p-3 rounded-full hover:bg-sky-400 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg"
-                    >
+
+                    <button aria-label="Twitter" className="bg-white/90 text-gray-800 p-3 rounded-full hover:bg-sky-400 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
                       <FaTwitter className="h-5 w-5" />
                     </button>
-                    <button
-                      aria-label="GitHub"
-                      className="bg-white/90 text-gray-800 p-3 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg"
-                    >
+
+                    <button aria-label="GitHub" className="bg-white/90 text-gray-800 p-3 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
                       <FaGithub className="h-5 w-5" />
                     </button>
+
                   </div>
                 </div>
               </div>
@@ -150,9 +138,7 @@ const Team = () => {
                   <FaCoffee className="h-5 w-5 text-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
-                <p
-                  className={`text-transparent bg-clip-text bg-gradient-to-r ${member.color} font-bold mb-4`}
-                >
+                <p className={`text-transparent bg-clip-text bg-gradient-to-r ${member.color} font-bold mb-4`}>
                   {member.role}
                 </p>
 
@@ -173,10 +159,9 @@ const Team = () => {
                 {/* Skills */}
                 <div className="flex flex-wrap gap-2">
                   {member.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className={`bg-gradient-to-r ${member.color} text-white px-3 py-1 rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
-                    >
+
+                    <span key={skillIndex}
+                      className={`bg-gradient-to-r ${member.color} text-white px-3 py-1 rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105`}>
                       {skill}
                     </span>
                   ))}
