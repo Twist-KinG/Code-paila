@@ -9,12 +9,19 @@ import Team from "./Team";
 const Home = () => {
   return (
     <section>
+
       <Hero />
+
       <About />
+
       <Services />
+
       <Portfolio />
+
       <Blog />
+      
       <Team />
+
     </section>
   );
 };
