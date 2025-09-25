@@ -93,6 +93,7 @@ const Blog = () => {
           </div>
 
         ))}
+        
       </div>
 
       {/* Explore Button */}
