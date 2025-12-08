@@ -1,6 +1,6 @@
 import Portfolio from "../models/Portfolio.js";
 
-// PUBLIC - Only published + public
+
 export const getPublicPortfolio = async (req, res) => {
     try {
         const projects = await Portfolio.find({ status: "Published", isPublic: true })
@@ -11,7 +11,7 @@ export const getPublicPortfolio = async (req, res) => {
     }
 };
 
-// PUBLIC - Get by ID
+
 export const getPortfolioById = async (req, res) => {
     try {
         const project = await Portfolio.findById(req.params.id);
@@ -22,7 +22,7 @@ export const getPortfolioById = async (req, res) => {
     }
 };
 
-// ADMIN - Get all
+
 export const getAdminPortfolio = async (req, res) => {
     try {
         const projects = await Portfolio.find().sort({ createdAt: -1 });
@@ -32,7 +32,7 @@ export const getAdminPortfolio = async (req, res) => {
     }
 };
 
-// ADMIN - Add
+
 export const addPortfolio = async (req, res) => {
     try {
         const newItem = new Portfolio(req.body);
@@ -43,7 +43,7 @@ export const addPortfolio = async (req, res) => {
     }
 };
 
-// ADMIN - Update
+
 export const updatePortfolio = async (req, res) => {
     try {
         const updatedItem = await Portfolio.findByIdAndUpdate(
@@ -57,7 +57,7 @@ export const updatePortfolio = async (req, res) => {
     }
 };
 
-// ADMIN - Delete
+
 export const deletePortfolio = async (req, res) => {
     try {
         await Portfolio.findByIdAndDelete(req.params.id);

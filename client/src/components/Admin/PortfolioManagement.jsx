@@ -1,5 +1,12 @@
+
 import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
+
+const tailwindColors = [
+  "red", "orange", "amber", "yellow", "lime", "green", "emerald",
+  "teal", "cyan", "sky", "blue", "indigo", "violet", "purple",
+  "fuchsia", "pink", "rose"
+];
 
 const PortfolioManagement = () => {
   const { admin } = useContext(AuthContext);
@@ -13,7 +20,8 @@ const PortfolioManagement = () => {
     image: "",
     category: "",
     technologies: "",
-    color: "",
+    color1: "blue",
+    color2: "purple",
     liveLink: "",
     githubLink: "",
     stats_users: "",
@@ -26,17 +34,19 @@ const PortfolioManagement = () => {
   const [editId, setEditId] = useState(null);
   const [popupMessage, setPopupMessage] = useState("");
 
-  // Fetch Projects
+  // Fetch projects
   const fetchProjects = async () => {
-    if (!admin || !admin.token) return;
+    if (!admin?.token) return;
+
     try {
       const res = await fetch("http://localhost:5000/api/admin/portfolio", {
         headers: { Authorization: `Bearer ${admin.token}` },
       });
+
       const data = await res.json();
       setProjects(data);
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -47,17 +57,18 @@ const PortfolioManagement = () => {
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // Submit Add/Edit Project
+  // Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!admin || !admin.token) return;
+    if (!admin?.token) return;
 
     const payload = {
       title: formData.title,
       description: formData.description,
       image: formData.image,
       category: formData.category,
-      color: formData.color,
+      color1: formData.color1,
+      color2: formData.color2,
       liveLink: formData.liveLink,
       githubLink: formData.githubLink,
       technologies: formData.technologies.split(",").map((t) => t.trim()),
@@ -89,20 +100,20 @@ const PortfolioManagement = () => {
       const data = await res.json();
       if (!res.ok) throw new Error(data.message);
 
-      setPopupMessage(editId ? "Project updated successfully" : "Project added successfully");
+      setPopupMessage(editId ? "Project updated" : "Project added");
       setTimeout(() => setPopupMessage(""), 2000);
 
       setShowForm(false);
       setEditId(null);
 
-      // Reset form
       setFormData({
         title: "",
         description: "",
         image: "",
         category: "",
         technologies: "",
-        color: "",
+        color1: "blue",
+        color2: "purple",
         liveLink: "",
         githubLink: "",
         stats_users: "",
@@ -118,7 +129,7 @@ const PortfolioManagement = () => {
     }
   };
 
-  // Edit project
+  // Edit
   const handleEdit = (project) => {
     setEditId(project._id);
 
@@ -127,10 +138,11 @@ const PortfolioManagement = () => {
       description: project.description,
       image: project.image,
       category: project.category,
-      color: project.color,
+      technologies: project.technologies.join(", "),
+      color1: project.color1,
+      color2: project.color2,
       liveLink: project.liveLink,
       githubLink: project.githubLink,
-      technologies: project.technologies.join(", "),
       stats_users: project.stats?.users || "",
       stats_rating: project.stats?.rating || "",
       stats_growth: project.stats?.growth || "",
@@ -141,18 +153,14 @@ const PortfolioManagement = () => {
     setShowForm(true);
   };
 
-  // Delete
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this project?")) return;
+    if (!window.confirm("Delete this project?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/portfolio/${id}`, {
+      await fetch(`http://localhost:5000/api/admin/portfolio/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${admin.token}` },
       });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message);
 
       setPopupMessage("Project deleted");
       setTimeout(() => setPopupMessage(""), 2000);
@@ -163,27 +171,18 @@ const PortfolioManagement = () => {
     }
   };
 
-  // Toggle Public/Private
   const togglePublic = async (project) => {
     try {
-      const res = await fetch(
-        `http://localhost:5000/api/admin/portfolio/${project._id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${admin.token}`,
-          },
-          body: JSON.stringify({ isPublic: !project.isPublic }),
-        }
-      );
+      await fetch(`http://localhost:5000/api/admin/portfolio/${project._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${admin.token}`,
+        },
+        body: JSON.stringify({ isPublic: !project.isPublic }),
+      });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message);
-
-      setPopupMessage(
-        project.isPublic ? "Project set to private" : "Project set to public"
-      );
+      setPopupMessage(project.isPublic ? "Set to Private" : "Set to Public");
       setTimeout(() => setPopupMessage(""), 2000);
 
       fetchProjects();
@@ -195,63 +194,40 @@ const PortfolioManagement = () => {
   return (
     <div className="p-8 relative">
 
-      {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-bold text-gray-900">Portfolio Management</h2>
+      {/* HEADER */}
+      <div className="flex justify-between mb-6">
+        <h2 className="text-3xl font-bold">Portfolio Management</h2>
         <button
           onClick={() => setShowForm(true)}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg"
         >
           + Add Project
         </button>
       </div>
 
-      {/* Project Cards */}
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
+      {/* CARDS */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((p) => (
           <div
-            key={project._id}
-            className="bg-white rounded-2xl shadow-md overflow-hidden transform hover:-translate-y-2 hover:shadow-2xl transition-all"
+            key={p._id}
+            className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition"
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-48 object-cover"
-            />
+            <img src={p.image} className="w-full h-64 object-cover" />
 
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-600 mb-2">{project.description}</p>
+            <div className="p-4">
+              <h3 className="text-xl font-semibold">{p.title}</h3>
+              <p className="text-gray-600">{p.description}</p>
 
-              <span
-                className={`inline-block px-3 py-1 rounded-full font-semibold mb-4 ${project.status === "Published"
-                    ? "bg-green-100 text-green-600"
-                    : "bg-red-100 text-red-600"
-                  }`}
-              >
-                {project.status}
-              </span>
-
-              <div className="flex justify-center gap-2 flex-wrap">
-                <button
-                  onClick={() => togglePublic(project)}
-                  className={`px-4 py-1 rounded ${project.isPublic ? "bg-green-500 text-white" : "bg-gray-500 text-white"
-                    }`}
-                >
-                  {project.isPublic ? "Public" : "Private"}
+              <div className="flex gap-2 mt-3">
+                <button onClick={() => togglePublic(p)} className="px-3 py-1 bg-gray-700 text-white rounded">
+                  {p.isPublic ? "Public" : "Private"}
                 </button>
 
-                <button
-                  onClick={() => handleEdit(project)}
-                  className="bg-yellow-400 text-white px-4 py-1 rounded hover:bg-yellow-500"
-                >
+                <button onClick={() => handleEdit(p)} className="px-3 py-1 bg-yellow-500 text-white rounded">
                   Edit
                 </button>
 
-                <button
-                  onClick={() => handleDelete(project._id)}
-                  className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600"
-                >
+                <button onClick={() => handleDelete(p._id)} className="px-3 py-1 bg-red-600 text-white rounded">
                   Delete
                 </button>
               </div>
@@ -260,150 +236,102 @@ const PortfolioManagement = () => {
         ))}
       </div>
 
-      {/* Add/Edit Modal */}
+      {/* ADD/EDIT FORM */}
       {showForm && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50 px-4">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-6 rounded-xl w-full max-w-md shadow-lg"
+            className="bg-white w-full max-w-md p-6 rounded-xl"
           >
-            <h3 className="text-2xl font-semibold mb-4 text-center">
+            <h3 className="text-2xl font-bold mb-4 text-center">
               {editId ? "Edit Project" : "Add Project"}
             </h3>
 
-            <label className="block font-semibold mb-1">Title</label>
-            <input
-              type="text"
-              name="title"
-              className="w-full border p-2 rounded mb-3"
-              value={formData.title}
-              onChange={handleChange}
-              required
-            />
+            {/* Title */}
+            <label className="font-semibold">Title</label>
+            <input className="w-full border p-2 rounded mb-2"
+              name="title" value={formData.title} onChange={handleChange} />
 
-            <label className="block font-semibold mb-1">Description</label>
-            <textarea
-              name="description"
-              className="w-full border p-2 rounded mb-3"
-              value={formData.description}
-              onChange={handleChange}
-              required
-            />
+            {/* Description */}
+            <label className="font-semibold">Description</label>
+            <textarea className="w-full border p-2 rounded mb-2"
+              name="description" value={formData.description} onChange={handleChange} />
 
-            <label className="block font-semibold mb-1">Image URL</label>
-            <input
-              type="text"
-              name="image"
-              className="w-full border p-2 rounded mb-3"
-              value={formData.image}
-              onChange={handleChange}
-            />
+            {/* Image */}
+            <label className="font-semibold">Image</label>
+            <input className="w-full border p-2 rounded mb-2"
+              name="image" value={formData.image} onChange={handleChange} />
 
-            <label className="block font-semibold mb-1">Category</label>
-            <input
-              type="text"
-              name="category"
-              className="w-full border p-2 rounded mb-3"
-              value={formData.category}
-              onChange={handleChange}
-            />
+            {/* Category */}
+            <label className="font-semibold">Category</label>
+            <input className="w-full border p-2 rounded mb-2"
+              name="category" value={formData.category} onChange={handleChange} />
 
-            <label className="block font-semibold mb-1">Technologies (comma separated)</label>
-            <input
-              type="text"
-              name="technologies"
-              className="w-full border p-2 rounded mb-3"
-              value={formData.technologies}
-              onChange={handleChange}
-            />
+            {/* Technologies */}
+            <label className="font-semibold">Technologies (comma separated)</label>
+            <input className="w-full border p-2 rounded mb-2"
+              name="technologies" value={formData.technologies} onChange={handleChange} />
 
-            <label className="block font-semibold mb-1">Gradient Color (e.g. from-blue-500 to-cyan-500)</label>
+            {/* ⭐ Added Live Link + GitHub Link fields here */}
+            <label className="font-semibold">Live Link</label>
             <input
-              type="text"
-              name="color"
-              className="w-full border p-2 rounded mb-3"
-              value={formData.color}
-              onChange={handleChange}
-            />
-
-            <label className="block font-semibold mb-1">Live Link</label>
-            <input
-              type="text"
+              className="w-full border p-2 rounded mb-2"
               name="liveLink"
-              className="w-full border p-2 rounded mb-3"
               value={formData.liveLink}
               onChange={handleChange}
+              placeholder="https://yourproject.com"
             />
 
-            <label className="block font-semibold mb-1">GitHub Link</label>
+            <label className="font-semibold">GitHub Link</label>
             <input
-              type="text"
+              className="w-full border p-2 rounded mb-2"
               name="githubLink"
-              className="w-full border p-2 rounded mb-3"
               value={formData.githubLink}
               onChange={handleChange}
+              placeholder="https://github.com/yourrepo"
             />
 
-            <div className="grid grid-cols-3 gap-2">
+            {/* Gradient Colors */}
+            <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-semibold mb-1">Users</label>
-                <input
-                  type="text"
-                  name="stats_users"
-                  className="w-full border p-2 rounded mb-3"
-                  value={formData.stats_users}
-                  onChange={handleChange}
-                />
+                <label>Gradient Color 1</label>
+                <select name="color1" className="w-full border p-2 rounded"
+                  value={formData.color1} onChange={handleChange}>
+                  {tailwindColors.map((c) => (
+                    <option key={c} value={c}>{c}</option>
+                  ))}
+                </select>
               </div>
+
               <div>
-                <label className="block font-semibold mb-1">Rating</label>
-                <input
-                  type="text"
-                  name="stats_rating"
-                  className="w-full border p-2 rounded mb-3"
-                  value={formData.stats_rating}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label className="block font-semibold mb-1">Growth</label>
-                <input
-                  type="text"
-                  name="stats_growth"
-                  className="w-full border p-2 rounded mb-3"
-                  value={formData.stats_growth}
-                  onChange={handleChange}
-                />
+                <label>Gradient Color 2</label>
+                <select name="color2" className="w-full border p-2 rounded"
+                  value={formData.color2} onChange={handleChange}>
+                  {tailwindColors.map((c) => (
+                    <option key={c} value={c}>{c}</option>
+                  ))}
+                </select>
               </div>
             </div>
 
-            <label className="block font-semibold mb-1">Status</label>
-            <select
-              name="status"
-              className="w-full border p-2 rounded mb-3"
-              value={formData.status}
-              onChange={handleChange}
-            >
-              <option value="Published">Published</option>
-              <option value="Draft">Draft</option>
-            </select>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-2 mt-2">
+              <input name="stats_users" placeholder="Users" className="border p-2 rounded"
+                value={formData.stats_users} onChange={handleChange} />
 
-            <div className="flex justify-end gap-2 flex-wrap">
-              <button
-                type="button"
-                onClick={() => {
-                  setShowForm(false);
-                  setEditId(null);
-                }}
-                className="px-4 py-2 bg-gray-400 text-white rounded-lg"
-              >
-                Cancel
-              </button>
+              <input name="stats_rating" placeholder="Rating" className="border p-2 rounded"
+                value={formData.stats_rating} onChange={handleChange} />
 
-              <button
-                type="submit"
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-              >
+              <input name="stats_growth" placeholder="Growth" className="border p-2 rounded"
+                value={formData.stats_growth} onChange={handleChange} />
+            </div>
+
+            {/* Buttons */}
+            <div className="flex justify-end gap-2 mt-4">
+              <button type="button" className="bg-gray-500 text-white px-4 py-2 rounded"
+                onClick={() => setShowForm(false)}>Cancel</button>
+
+              <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded">
                 {editId ? "Update" : "Add"}
               </button>
             </div>
@@ -411,26 +339,12 @@ const PortfolioManagement = () => {
         </div>
       )}
 
-      {/* Success Popup */}
+      {/* Popup */}
       {popupMessage && (
-        <div className="fixed bottom-6 right-6 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg animate-fade-in-out z-50">
+        <div className="fixed bottom-6 right-6 bg-green-600 text-white px-4 py-2 rounded shadow-lg">
           {popupMessage}
         </div>
       )}
-
-      <style>
-        {`
-          @keyframes fadeInOut {
-            0% { opacity: 0; transform: translateY(20px); }
-            10% { opacity: 1; transform: translateY(0); }
-            90% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(20px); }
-          }
-          .animate-fade-in-out {
-            animation: fadeInOut 2s ease-in-out forwards;
-          }
-        `}
-      </style>
     </div>
   );
 };

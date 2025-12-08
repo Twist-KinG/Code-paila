@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 const portfolioSchema = new mongoose.Schema({
@@ -6,12 +7,16 @@ const portfolioSchema = new mongoose.Schema({
     image: { type: String },
     technologies: [{ type: String }],
     category: { type: String },
+
+    color1: { type: String, default: "blue" },
+    color2: { type: String, default: "purple" }, 
+
     stats: {
         users: String,
         rating: String,
         growth: String,
     },
-    color: { type: String },
+
     liveLink: { type: String },
     githubLink: { type: String },
 
