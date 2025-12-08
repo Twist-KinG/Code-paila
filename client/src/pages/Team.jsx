@@ -9,10 +9,10 @@ const Team = () => {
   const teamMembers = [
     {
       name: "Rajesh Karki",
-      role: "Manager",
+      role: "Executive Director",
       image: "./src/assets/img/rajesh.jpg",
-      bio: "Leading with vision and passion to deliver impactful solutions.",
-      skills: ["React", "Node.js", ".NET", "C#", "Leadership","SQL Server Management"],
+      bio: "Provides strategic leadership and drives innovation to ensure the delivery of high-quality digital solutions that help businesses grow and succeed.",
+      skills: ["React", "Node.js", ".NET", "C#", "Leadership","SQL Server Management","Project Management","Mentorship"],
       achievements: "20+ Projects Led",
       color: "from-blue-500 to-cyan-500",
     },
