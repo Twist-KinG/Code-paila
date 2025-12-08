@@ -176,6 +176,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <p className="text-gray-400 text-center md:text-left">
               © {currentYear} <Link
+                target="_blank"
                 to="/adminlogin"
                 className="text-gray-400 hover:text-blue-400 transition-colors duration-300 relative group">-<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
               </Link> CodePaila. Crafted with passion in the Himalayas.

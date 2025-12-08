@@ -6,6 +6,7 @@ import adminRoutes from "./routes/adminRoutes.js";
 import careerRoutes from "./routes/CareerRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
 import publicRoutes from "./routes/publicRoutes.js";
+import portfolioRoutes from "./routes/portfolioRoutes.js";
 
 dotenv.config();
 connectDB(); // connect to MongoDB
@@ -22,8 +23,11 @@ app.use("/api", publicRoutes);
 
 // admin Routes
 app.use("/api/admin", adminRoutes);
+
 //career routes
 app.use("/api/admin/career", careerRoutes);
 app.use("/api/admin/blog", blogRoutes);
+app.use("/api/admin/portfolio", portfolioRoutes);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
