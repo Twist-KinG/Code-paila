@@ -22,7 +22,7 @@ const BlogManagement = () => {
   const fetchBlogs = async () => {
     if (!admin || !admin.token) return;
     try {
-      const res = await fetch("http://localhost:5000/api/admin/blog", {
+      const res = await fetch("https://code-paila-official.vercel.app/api/admin/blog", {
         headers: { Authorization: `Bearer ${admin.token}` },
       });
       const data = await res.json();
@@ -46,8 +46,8 @@ const BlogManagement = () => {
 
     try {
       const url = editId
-        ? `http://localhost:5000/api/admin/blog/${editId}`
-        : "http://localhost:5000/api/admin/blog";
+        ? `https://code-paila-official.vercel.app/api/admin/blog/${editId}`
+        : "https://code-paila-official.vercel.app/api/admin/blog";
       const method = editId ? "PUT" : "POST";
 
       const res = await fetch(url, {
@@ -99,7 +99,7 @@ const BlogManagement = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this blog?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/blog/${id}`, {
+      const res = await fetch(`https://code-paila-official.vercel.app/api/admin/blog/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${admin.token}` },
       });
@@ -116,7 +116,7 @@ const BlogManagement = () => {
   const togglePublic = async (blog) => {
     if (!admin || !admin.token) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/blog/${blog._id}`, {
+      const res = await fetch(`https://code-paila-official.vercel.app/api/admin/blog/${blog._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

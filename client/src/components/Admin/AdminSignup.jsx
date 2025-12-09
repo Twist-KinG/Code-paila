@@ -15,7 +15,7 @@ const AdminSignup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post("http://localhost:5000/api/admin/signup", {
+            const { data } = await axios.post("https://code-paila-official.vercel.app/api/admin/signup", {
                 name, email, password
             });
             login(data);

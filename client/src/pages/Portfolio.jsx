@@ -10,7 +10,7 @@ const Portfolio = () => {
   useEffect(() => {
     const loadProjects = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/portfolio");
+        const res = await fetch("https://code-paila-official.vercel.app/api/portfolio");
         const data = await res.json();
 
         if (Array.isArray(data)) {

@@ -21,7 +21,7 @@ const CareerManagement = () => {
   const fetchCareers = async () => {
     if (!admin || !admin.token) return;
     try {
-      const res = await fetch("http://localhost:5000/api/admin/career", {
+      const res = await fetch("https://code-paila-official.vercel.app/api/admin/career", {
         headers: { Authorization: `Bearer ${admin.token}` },
       });
       const data = await res.json();
@@ -45,8 +45,8 @@ const CareerManagement = () => {
 
     try {
       const url = editId
-        ? `http://localhost:5000/api/admin/career/${editId}`
-        : "http://localhost:5000/api/admin/career";
+        ? `https://code-paila-official.vercel.app/api/admin/career/${editId}`
+        : "https://code-paila-official.vercel.app/api/admin/career";
       const method = editId ? "PUT" : "POST";
 
       const res = await fetch(url, {
@@ -96,7 +96,7 @@ const CareerManagement = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this career?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/career/${id}`, {
+      const res = await fetch(`https://code-paila-official.vercel.app/api/admin/career/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${admin.token}` },
       });
@@ -113,7 +113,7 @@ const CareerManagement = () => {
   const togglePublic = async (career) => {
     if (!admin || !admin.token) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/career/${career._id}`, {
+      const res = await fetch(`https://code-paila-official.vercel.app/api/admin/career/${career._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

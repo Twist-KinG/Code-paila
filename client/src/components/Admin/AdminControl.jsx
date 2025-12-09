@@ -18,7 +18,7 @@ const AdminControl = () => {
     const fetchAdmins = async () => {
         if (!admin || !admin.token) return;
         try {
-            const res = await fetch("http://localhost:5000/api/admin/list", {
+            const res = await fetch("https://code-paila-official.vercel.app/api/admin/list", {
                 headers: { Authorization: `Bearer ${admin.token}` },
             });
             const data = await res.json();
@@ -46,7 +46,7 @@ const AdminControl = () => {
         }
 
         try {
-            const res = await fetch("http://localhost:5000/api/admin", {
+            const res = await fetch("https://code-paila-official.vercel.app/api/admin", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

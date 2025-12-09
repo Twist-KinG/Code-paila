@@ -6,7 +6,7 @@ const Careers = () => {
     // Fetch public careers from backend
     const fetchCareers = async () => {
         try {
-            const res = await fetch("http://localhost:5000/api/careers"); // public route
+            const res = await fetch("https://code-paila-official.vercel.app/api/careers"); // public route
             const data = await res.json();
             setJobOpenings(data);
         } catch (err) {

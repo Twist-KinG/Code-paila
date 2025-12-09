@@ -39,7 +39,7 @@ const PortfolioManagement = () => {
     if (!admin?.token) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/admin/portfolio", {
+      const res = await fetch("https://code-paila-official.vercel.app/api/admin/portfolio", {
         headers: { Authorization: `Bearer ${admin.token}` },
       });
 
@@ -83,8 +83,8 @@ const PortfolioManagement = () => {
 
     try {
       const url = editId
-        ? `http://localhost:5000/api/admin/portfolio/${editId}`
-        : "http://localhost:5000/api/admin/portfolio";
+        ? `https://code-paila-official.vercel.app/api/admin/portfolio/${editId}`
+        : "https://code-paila-official.vercel.app/api/admin/portfolio";
 
       const method = editId ? "PUT" : "POST";
 
@@ -157,7 +157,7 @@ const PortfolioManagement = () => {
     if (!window.confirm("Delete this project?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/admin/portfolio/${id}`, {
+      await fetch(`https://code-paila-official.vercel.app/api/admin/portfolio/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${admin.token}` },
       });
@@ -173,7 +173,7 @@ const PortfolioManagement = () => {
 
   const togglePublic = async (project) => {
     try {
-      await fetch(`http://localhost:5000/api/admin/portfolio/${project._id}`, {
+      await fetch(`https://code-paila-official.vercel.app/api/admin/portfolio/${project._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
