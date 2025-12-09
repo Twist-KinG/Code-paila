@@ -130,7 +130,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-8 text-white relative">
               Get In Touch
               <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-teal-400 to-green-400 rounded-full"></div>
@@ -168,7 +168,57 @@ const Footer = () => {
                 </p>
               </div>
             </div>
+          </div> */}
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-8 text-white relative">
+              Get In Touch
+              <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-teal-400 to-green-400 rounded-full"></div>
+            </h3>
+
+            <div className="space-y-6">
+
+              {/* Location (no change) */}
+              <div className="group flex items-start space-x-4">
+                <div className="w-10 h-10 bg-gradient-to-r from-teal-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <HiLocationMarker className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                    Bharatpur, Chitwan
+                  </p>
+                  <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                    Bagmati Province, Nepal
+                  </p>
+                </div>
+              </div>
+
+              {/* PHONE — CLICK TO CALL */}
+              <a href="tel:+9779761734597" className="group flex items-center space-x-4">
+                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <HiPhone className="h-5 w-5 text-white" />
+                </div>
+                <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                  +977-9761734597
+                </p>
+              </a>
+
+              {/* EMAIL — CLICK TO OPEN MAIL APP */}
+              <a href="mailto:infocodepaila@gmail.com" className="group flex items-center space-x-4">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <HiMail className="h-5 w-5 text-white" />
+                </div>
+                <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                  infocodepaila@gmail.com
+                </p>
+              </a>
+
+            </div>
           </div>
+
+          
+          
         </div>
 
         {/* Bottom Section */}
